@@ -17,5 +17,12 @@
 # MATLAB
   - Dynamic field indexing in structures
 
-
-
+# Other
+  - PyCharm 
+    - Lint
+    - Fix import error
+  - Cloud IDE
+    - Koding
+    - Nitrous
+  - GitHub Pages
+  - Git LaTeX report?
