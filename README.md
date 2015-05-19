@@ -1,6 +1,6 @@
 # GitHub
 - [ ] rename repo (and its effect on local copy)
-- [ ] how to create a to-do list
+- [x] how to create a to-do list: https://help.github.com/articles/writing-on-github/#task-lists
 - [ ] how to get absolute url up to the repo main level
 
 # Python
