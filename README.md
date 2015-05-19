@@ -1,5 +1,5 @@
 # GitHub
-- [ ] rename repo (and its effect on local copy)
+- [ ] rename repo (and its effect on local copy): https://help.github.com/articles/renaming-a-repository/
 - [x] how to create a to-do list: https://help.github.com/articles/writing-on-github/#task-lists
 - [ ] how to get absolute url up to the repo main level
 
