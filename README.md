@@ -17,6 +17,15 @@
 # MATLAB
   - Dynamic field indexing in structures
 
+# Amazon Web Services (AWS)
+## Elastic Cloud Compute (EC2)
+- [ ] create my amazon machine image. ubuntu with
+   - [ ] python
+   - [ ] pip (or easy_install?)
+   - [ ] virtualenv
+   - [ ] numpy
+   - [ ] scipy
+
 # Other
   - PyCharm 
     - Lint
@@ -26,3 +35,9 @@
     - Nitrous
   - GitHub Pages
   - Git LaTeX report?
+   
+# More
+- [ ] mapreduce in python
+- [ ] spark (berkeley stack) in python
+- [ ] mysql/python
+- [ ] kaggle
