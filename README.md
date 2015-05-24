@@ -33,6 +33,8 @@
   - Cloud IDE
     - Koding
     - Nitrous
+    - Cloud 9? 
+    - Codenvy?
   - GitHub Pages
   - Git LaTeX report?
    
