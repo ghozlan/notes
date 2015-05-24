@@ -2,6 +2,7 @@
 - [ ] rename repo (and its effect on local copy): https://help.github.com/articles/renaming-a-repository/
 - [x] how to create a to-do list: https://help.github.com/articles/writing-on-github/#task-lists
 - [ ] how to get absolute url up to the repo main level
+- [ ] remove a commit? an intermediate commit
 
 # Python
 - [ ] figure name
@@ -33,12 +34,13 @@
   - Cloud IDE
     - Koding
     - Nitrous
-    - Cloud 9? 
+    - Cloud 9 
     - Codenvy?
   - GitHub Pages
   - Git LaTeX report?
    
 # More
+- [ ] bitbucket
 - [ ] mapreduce in python
 - [ ] spark (berkeley stack) in python
 - [ ] mysql/python
