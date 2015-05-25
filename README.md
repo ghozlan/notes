@@ -33,7 +33,7 @@
     - Fix import error
   - Cloud IDE
     - Koding
-    - Nitrous
+    - Nitrous (free plan requires phone number)
     - Cloud 9 
     - Codenvy?
   - GitHub Pages
