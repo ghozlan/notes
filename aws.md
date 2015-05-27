@@ -19,4 +19,50 @@ Compute> EC2> Instances> Instances
   * Ctrl+a ": select screen from list  
   * Ctrl+a d: detatch
   * screen -r: resume session
+  
+Installing packages:
+* virtualenv?
+* pip:
+ * Type: pip. 
 
+  > The program 'pip' is currently not installed. You can install it by typing:
+  > sudo apt-get install python-pip
+
+ * May need to run: 'sudo apt-get update' before 'sudo apt-get install python-pip'
+
+* easy_install:
+ * Type: easy_install.  
+
+  > The program 'easy_install' is currently not installed. You can install it by typing:
+  > sudo apt-get install python-setuptools
+
+* IPython:
+ * Type: sudo easy_install ipython
+
+* NumPy
+
+ 1. Try
+    * sudo easy_install numpy [error]
+ 2. Try
+    * sudo pip install numpy [error]
+ 3. Try
+    * sudo apt-get install python-dev
+    * Then: sudo easy_install numpy [works, but some warnings]
+
+* SciPy
+ 1. Try
+    * sudo easy_install scipy [error]
+ 2. Try
+    * sudo apt-get install python-dev
+    * Then type: sudo easy_install scipy [error, still]
+    * Or type: sudo pip install scipy [error, still]
+ 3. Try
+    * sudo apt-get install python-scipy [works]
+
+* Matplotlib
+ 1. Try
+    * sudo apt-get install matplotlib [error]
+ 2. Try
+    * sudo pip install matplotlib [does not give error, but does not work]
+
+https://imiloainf.wordpress.com/2011/12/03/build-a-ubuntu-amazon-ec2-instance/
