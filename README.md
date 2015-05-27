@@ -20,9 +20,9 @@
 
 # Amazon Web Services (AWS)
 ## Elastic Cloud Compute (EC2)
-- [ ] create my amazon machine image. ubuntu with
-   - [ ] python
-   - [ ] pip (or easy_install?)
+- [ ] Create my Amazon Machine Image (AMI). Ubuntu with
+   - [x] python (already installed)
+   - [ ] pip / easy_install
    - [ ] virtualenv
    - [ ] numpy
    - [ ] scipy
