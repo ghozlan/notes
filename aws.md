@@ -95,6 +95,40 @@ _tkinter.TclError: no display name and no $DISPLAY environment variable
 
 ### PIP Python Package Manager [no virtualenv]
 
+To obtain a list of python packages installed
+``` 
+pip list 
+```
+
+### Virtual Environment 
+
+Create a directory to contain the virtual environments you will create
+```
+mkdir virtenv
+```
+
+To create a virtual environment, use
+```
+virtualenv virtenv/env1
+```
+or  use the ```--no-site-packages``` option:
+```
+virtualenv virtenv/env2 --no-site-packages
+```
+
+To activate an environment
+```
+user@host:~$ source virtenv/env1/bin/activate
+```
+
+To deactivate current environment
+
+```
+(env1)user@host:~$ deactivate
+```
+
+[Reference](http://simononsoftware.com/virtualenv-tutorial/)
+
 ### Adding Virtual Memory
 
 1. Create a EBS-volume with for example 1 GB (if you want to add 1 GB virtual memory).
