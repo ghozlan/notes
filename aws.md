@@ -11,7 +11,9 @@ Compute> EC2> Instances> Instances
 * Add a name tag (optional).
 * Note down the Public DNS or Public IP (will need one of them for connecting to terminal)
   * Default user: ubuntu
-* Using PuTTY, connect to: ubunu@(Public DNS) or ubuntu@(Public IP)
+* Use PuTTY
+  * Connect to: ubunu@(Public DNS) or ubuntu@(Public IP)
+  * Note: To paste (from clipboard), just right-click in the window area.
 * Use *screen* command (neat tool for handling screens/windows in command line)
   * Ctrl+a ?: help
   * Ctrl+a c: create new screen
@@ -21,23 +23,52 @@ Compute> EC2> Instances> Instances
   * screen -r: resume session
   
 Installing packages:
-* virtualenv?
-* pip:
- * Type: pip. 
+* Update first
+```
+sudo apt-get update
+```
 
-  > The program 'pip' is currently not installed. You can install it by typing:
-  > sudo apt-get install python-pip
+* Python Package Management Tool: pip or easy_install
+  1. pip 
 
- * May need to run: 'sudo apt-get update' before 'sudo apt-get install python-pip'
+     ```
+     sudo apt-get install python-pip
+     ```
 
-* easy_install:
- * Type: easy_install.  
+    To obtain a list of python packages installed
+    ``` 
+    pip list 
+    ```
 
-  > The program 'easy_install' is currently not installed. You can install it by typing:
-  > sudo apt-get install python-setuptools
+  2. easy_install:
+
+     If you type 
+     ```
+     easy_install
+     ```
+     this message will point you to which linux pacakge name to use
+     ```
+     The program 'easy_install' is currently not installed. You can install it by typing:
+     sudo apt-get install python-setuptools
+     ```
+
+* virtualenv
+```
+sudo pip install virtualenv
+```
+or
+```
+sudo easy_install virtualenv
+```
 
 * IPython:
- * Type: sudo easy_install ipython
+```
+sudo pip install ipython
+```
+or
+```
+sudo easy_install ipython
+```
 
 * NumPy
 
@@ -66,22 +97,39 @@ Installing packages:
     * sudo pip install matplotlib [does not give error, but does not work]
 
 
-### Ubunutu Package Manager [no virtualenv]
+### Ubunutu Package Manager [without virtualenv]
 Run (in order):
 ```
 sudo apt-get update
-sudo apt-get install python-pip
+sudo apt-get -y install python-pip
 sudo pip install ipython
-sudo apt-get install python-numpy
-sudo apt-get install python-scipy
-sudo apt-get install python-matplotlib
+sudo apt-get -y install python-numpy
+sudo apt-get -y install python-scipy
+sudo apt-get -y install python-matplotlib
 ```
+The ```-y``` option of ``apt-get``` to assume *yes* as a default answer.
 
 You can also install pandas and other packages, see [this](http://www.scipy.org/install.html#ubuntu-debian).
 
 [Reference](https://imiloainf.wordpress.com/2011/12/03/build-a-ubuntu-amazon-ec2-instance/)
 
-Plotting in command line [error]
+### Ubunutu Package Manager [with virtualenv]
+Run (in order):
+```
+sudo apt-get update
+sudo apt-get -y install python-pip
+sudo pip install virtualenv
+mkdir virtenv
+virtualenv virtenv/scienv
+source virtenv/scienv/bin/activate
+sudo pip install ipython
+sudo apt-get -y install python-numpy
+sudo apt-get -y install python-scipy
+sudo apt-get -y install python-matplotlib
+```
+The ```-y``` option of ``apt-get``` to assume *yes* as a default answer.
+
+### Plotting in command line [error]
 ```
     fig = figure()
   File "/usr/lib/pymodules/python2.7/matplotlib/pyplot.py", line 423, in figure
@@ -111,12 +159,8 @@ sudo pip install scipy
 gives error.
 Probably need to install LAPCK/BLAS, which seems a bit tedious, see [this](http://www.scipy.org/scipylib/building/linux.html).
 
-To obtain a list of python packages installed
-``` 
-pip list 
-```
 
-### Virtual Environment 
+### Virtual Environment *virtualenv*
 
 Create a directory to contain the virtual environments you will create
 ```
