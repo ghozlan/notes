@@ -78,4 +78,18 @@ sudo apt-get install python-scipy
 sudo apt-get install python-matplotlib
 ```
 
+Plotting in command line [error]
+```
+    fig = figure()
+  File "/usr/lib/pymodules/python2.7/matplotlib/pyplot.py", line 423, in figure
+    **kwargs)
+  File "/usr/lib/pymodules/python2.7/matplotlib/backends/backend_tkagg.py", line 79, in new_figure_manager
+    return new_figure_manager_given_figure(num, figure)
+  File "/usr/lib/pymodules/python2.7/matplotlib/backends/backend_tkagg.py", line 87, in new_figure_manager_given_figure
+    window = Tk.Tk()
+  File "/usr/lib/python2.7/lib-tk/Tkinter.py", line 1767, in __init__
+    self.tk = _tkinter.create(screenName, baseName, className, interactive, wantobjects, useTk, sync, use)
+_tkinter.TclError: no display name and no $DISPLAY environment variable
+```
+
 ### PIP Python Package Manager [no virtualenv]
