@@ -77,6 +77,8 @@ sudo apt-get install python-scipy
 sudo apt-get install python-matplotlib
 ```
 
+You can also install pandas and other packages, see [this](http://www.scipy.org/install.html#ubuntu-debian).
+
 [Reference](https://imiloainf.wordpress.com/2011/12/03/build-a-ubuntu-amazon-ec2-instance/)
 
 Plotting in command line [error]
