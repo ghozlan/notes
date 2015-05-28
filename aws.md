@@ -65,7 +65,6 @@ Installing packages:
  2. Try
     * sudo pip install matplotlib [does not give error, but does not work]
 
-https://imiloainf.wordpress.com/2011/12/03/build-a-ubuntu-amazon-ec2-instance/
 
 ### Ubunutu Package Manager [no virtualenv]
 Run (in order):
@@ -77,6 +76,8 @@ sudo apt-get install python-numpy
 sudo apt-get install python-scipy
 sudo apt-get install python-matplotlib
 ```
+
+[Reference](https://imiloainf.wordpress.com/2011/12/03/build-a-ubuntu-amazon-ec2-instance/)
 
 Plotting in command line [error]
 ```
@@ -95,8 +96,6 @@ _tkinter.TclError: no display name and no $DISPLAY environment variable
 ### PIP Python Package Manager [no virtualenv]
 
 ### Adding Virtual Memory
-
-[Reference](https://damvin.com/index.php/2013/03/14/adding-virtual-memory-to-aws-ec2-micro-instances-and-other-smart-tips/)
 
 1. Create a EBS-volume with for example 1 GB (if you want to add 1 GB virtual memory).
 
@@ -120,3 +119,5 @@ Edit your /etc/fstab file and add the line:
  ```
  /dev/xvdf       swap    swap    defaults        0       0
  ```
+
+[Reference](https://damvin.com/index.php/2013/03/14/adding-virtual-memory-to-aws-ec2-micro-instances-and-other-smart-tips/)
