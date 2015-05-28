@@ -171,3 +171,36 @@ Edit your /etc/fstab file and add the line:
  ```
 
 [Reference](https://damvin.com/index.php/2013/03/14/adding-virtual-memory-to-aws-ec2-micro-instances-and-other-smart-tips/)
+
+
+## Hello, AWS
+
+### Elastic Compute Cloud (EC2)
+* 750 hours of 
+ * Amazon EC2 Linux on t2.micro instance (1 GiB of memory and 32-bit and 64-bit platform support) 
+ * Amazon EC2 Microsoft Windows Server on t2.micro instance (1 GiB of memory and 32-bit and 64-bit platform support)
+ * Also RHEL, or SLES on t2.micro.
+ * 750 hours is enough to run (one instance) continuously each month.
+ * Can run one instance at a time or multiple instances simultaneously.
+* 30 GB of Amazon Elastic Block Storage in any combination of General Purpose (SSD) or Magnetic, plus 2 million I/Os (with EBS Magnetic) and 1 GB of snapshot storage.
+
+[Reference](http://aws.amazon.com/free/)
+
+### Simple Storage Service (S3)
+* 5 GB of Amazon S3 standard storage, 20,000 Get Requests, and 2,000 Put Requests
+
+## Useful Linux Commands
+```
+df -h
+
+sudo fdisk -l | grep Disk
+lsblk
+
+sudo mkfs -t ext4 /dev/xvdf (run once to format)
+sudo mount /dev/xvdf /mnt/my-data
+
+cat /etc/fstab
+
+sudo mkswap -f /dev/xvdf 
+sudo swapon /dev/xvdf
+```
