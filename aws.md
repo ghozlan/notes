@@ -66,3 +66,16 @@ Installing packages:
     * sudo pip install matplotlib [does not give error, but does not work]
 
 https://imiloainf.wordpress.com/2011/12/03/build-a-ubuntu-amazon-ec2-instance/
+
+### Ubunutu Package Manager [no virtualenv]
+Run (in order):
+```
+sudo apt-get update
+sudo apt-get install python-pip
+sudo pip install ipython
+sudo apt-get install python-numpy
+sudo apt-get install python-scipy
+sudo apt-get install python-matplotlib
+```
+
+### PIP Python Package Manager [no virtualenv]
