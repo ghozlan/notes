@@ -248,3 +248,9 @@ cat /etc/fstab
 sudo mkswap -f /dev/xvdf 
 sudo swapon /dev/xvdf
 ```
+
+## Useful Linux Tools
+* diff
+  * diff -y (side-by-side)
+* colordiff
+* htop
