@@ -97,6 +97,20 @@ _tkinter.TclError: no display name and no $DISPLAY environment variable
 
 ### PIP Python Package Manager [no virtualenv]
 
+Seems difficult. 
+
+For NumPy,
+```
+sudo pip install numpy
+```
+works
+but for SciPy,
+```
+sudo pip install scipy
+```
+gives error.
+Probably need to install LAPCK/BLAS, which seems a bit tedious, see [this](http://www.scipy.org/scipylib/building/linux.html).
+
 To obtain a list of python packages installed
 ``` 
 pip list 
