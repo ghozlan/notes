@@ -84,3 +84,72 @@ print m.group()
 # execute/run a script
 #execfile(filename) #filename should include .py
 ```
+
+## Regular Expressions (RegEx)
+search
+
+```
+#%% Regular Expressions (a.k.a RegEx, regex, regexp)
+import re
+filename = "channela_scheme1_125123_py"
+nonmatch_filename = "redbud.tree"
+
+#%% No match case
+m = re.search(r"channel._scheme.", nonmatch_filename)
+if m:
+    print "match"
+else:
+    print "no match"    # no match
+
+#%% Finding a match
+m = re.search(r"channel._scheme.", filename)
+if m:
+    print m.group(0)    # channela_scheme1
+    print m.groups()    # empty list
+    print m.groupdict() # empty dict
+else:
+    print "no match"
+    
+#%% Extracting the channel index and the scheme index (using subexpressions)
+m = re.search(r"channel(.)_scheme(.)", filename)
+if m:
+    print m.group(0)    # channela_scheme1
+    print m.group(1)    # a
+    print m.group(2)    # 1
+    print m.groups()    # ('a', '1')
+    print m.groupdict() # empty dict
+else:
+    print "no match"
+
+#%% Extracting the channel index and the scheme index (using subexpressions with names)
+# the name-match pairs are returned by groupdict() as a dictionary 
+m = re.search(r"channel(?P<ch>.)_scheme(?P<sch>.)", filename)
+if m:    
+    print m.group(0)    # channela_scheme1
+    print m.group(1)    # a
+    print m.group(2)    # 1
+    print m.groups()    # ('a', '1')
+    print m.groupdict() # {'ch': 'a', 'sch': '1'}
+else:
+    print "no match"
+
+#%% Can extract channel separately
+m = re.search(r"channel(?P<ch>.)", filename)
+if m:
+    print m.group(0)    # channela
+    print m.group(1)    # a
+    print m.groups()    # ('a',)
+    print m.groupdict() # {'ch': 'a'}
+else:
+    print "no match"
+    
+#%% Or extract channel separately
+m = re.search(r".*scheme(?P<sch>.)", filename)
+if m:
+    print m.group(0)    # channela_scheme1
+    print m.group(1)    # 1
+    print m.groups()    # ('1',)
+    print m.groupdict() # {'sch': '1'}
+else:
+    print "no match"        
+```
