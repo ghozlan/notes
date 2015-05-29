@@ -39,7 +39,18 @@ Compute> EC2> Instances> Instances
   * Ctrl+a ": select screen from list  
   * Ctrl+a d: detatch
   * screen -r: resume session
-  
+
+## Transferring files using FileZilla
+* Edit> Settings> Connection> SFTP> 
+  * Add keyfile
+* File> Site Manager> New Site
+  * Host: (Public IP) or (Public DNS)
+  * Port: leave blank (default will be used)
+  * Protocol: SFTP
+  * Logon Type: Normal
+  * User: ubuntu
+  * Password: leave blank (we are using a key instead)
+  * Connect
 
 ## Adding Elastic Block Store (EBS) Volume
 Compute> EC2> Elastic Block Store> Volume
