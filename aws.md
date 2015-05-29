@@ -107,7 +107,7 @@ sudo apt-get -y install python-numpy
 sudo apt-get -y install python-scipy
 sudo apt-get -y install python-matplotlib
 ```
-The ```-y``` option of ``apt-get``` to assume *yes* as a default answer.
+The `-y` option of `apt-get` to assume *yes* as a default answer.
 
 You can also install pandas and other packages, see [this](http://www.scipy.org/install.html#ubuntu-debian).
 
@@ -127,7 +127,7 @@ sudo apt-get -y install python-numpy
 sudo apt-get -y install python-scipy
 sudo apt-get -y install python-matplotlib
 ```
-The ```-y``` option of ``apt-get``` to assume *yes* as a default answer.
+The `-y` option of `apt-get` to assume *yes* as a default answer.
 
 ### Plotting in command line [error]
 ```
