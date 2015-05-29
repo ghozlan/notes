@@ -35,7 +35,7 @@
     - Fix import error
   - Cloud IDE
     - Koding
-    - Nitrous [free plan requires phone number] (24.5.15)
+    - Nitrous, free plan requires phone number (24.5.15)
     - Cloud 9 
     - Codenvy?
   - GitHub Pages
