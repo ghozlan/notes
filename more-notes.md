@@ -153,3 +153,31 @@ if m:
 else:
     print "no match"        
 ```
+
+match
+```
+#%% search vs match
+# re.match() checks for a match only at the beginning of the string, 
+# while re.search() checks for a match anywhere in the string 
+# (this is what Perl does by default).
+
+# re.match does not find a match
+m = re.match(r"scheme(?P<sch>.)", filename)
+if m:
+    print m.group(0)    # channela_scheme1
+    print m.group(1)    # 1
+    print m.groups()    # ('1',)
+    print m.groupdict() # {'sch': '1'}
+else:
+    print "no match"    
+
+# but re.search does
+m = re.match(r".*scheme(?P<sch>.)", filename)
+if m:
+    print m.group(0)    # channela_scheme1
+    print m.group(1)    # 1
+    print m.groups()    # ('1',)
+    print m.groupdict() # {'sch': '1'}
+else:
+    print "no match"    
+```
