@@ -28,7 +28,7 @@
    - [x] scipy
    - [x] matplotlib 
 - [ ] Create custom Amazon Machine Image (AMI) with packages above
-- 
+
 # Other
   - PyCharm 
     - Lint
