@@ -50,3 +50,25 @@ sudo pip install line_profiler
   ```
   
   [Reference](https://github.com/rkern/line_profiler)
+
+## memory_profiler
+### Installation
+
+Using the pip package
+```
+pip install -U memory_profiler
+pip install psutil
+```
+psutils improves the performance of memory_profiler
+
+### Usage
+
+1. Insert ```@profiler``` decorator before the functions you want to profile.
+
+2. Run the profiler
+  ```
+  python -m memory_profiler script_to_profile.py
+  ```
+
+
+[Reference for cProfile, line_profiler and memory_profiler](http://www.huyng.com/posts/python-performance-analysis/)
