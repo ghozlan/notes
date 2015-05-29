@@ -1,5 +1,6 @@
-Amazon Web Services
+# Amazon Web Services
 
+## Creating an Instance
 Compute> EC2>
 * Launch Instance
 * Select: Ubuntu Server 14.04 LTS (HVM), SSD Volume Type, 64-bit [free tier]
@@ -7,6 +8,7 @@ Compute> EC2>
 * Select Security Group?
 * Select a Key Pair
 
+## Connecting to an Instance
 Compute> EC2> Instances> Instances
 * Add a name tag (optional).
 * Note down the Public DNS or Public IP (will need one of them for connecting to terminal)
@@ -22,7 +24,29 @@ Compute> EC2> Instances> Instances
   * Ctrl+a d: detatch
   * screen -r: resume session
   
-Installing packages:
+
+## Adding Elastic Block Store (EBS) Volume
+Compute> EC2> Elastic Block Store> Volume
+* Create volume.
+  * Watch out for the size! There is a limit for the free tier. 
+  * Watch out for the availability zone!
+* Add a name tag (optional).
+* Select the volume, then from Actions, select Attach Volume (suppose it is attached as /dev/sdf).
+* Connect to the instance to which the volume is attached
+* Format the volume (once)
+
+  ```sudo mkfs -t ext4 /dev/xvdf```
+
+* To mount the device as /mnt/mydata, run 
+
+  ```
+  sudo mkdir /mnt/my-data
+  sudo mount /dev/xvdf /mnt/mydata
+  ```
+
+[Reference](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-add-volume-to-instance.html)
+
+## Installing packages:
 * Update first
 ```
 sudo apt-get update
@@ -189,7 +213,7 @@ To deactivate current environment
 
 [Reference](http://simononsoftware.com/virtualenv-tutorial/)
 
-### Adding Virtual Memory
+## Adding Virtual Memory
 
 1. Create a EBS-volume with for example 1 GB (if you want to add 1 GB virtual memory).
 
