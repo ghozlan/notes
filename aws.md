@@ -193,7 +193,7 @@ To deactivate current environment
 
 1. Create a EBS-volume with for example 1 GB (if you want to add 1 GB virtual memory).
 
-2. After the EBS-volume is creates, attach it to the EC 2 micro instance (remember which device it is attached to (for example /dev/sdf)
+2. After the EBS-volume is created, attach it to the EC 2 micro instance (remember which device it is attached to (for example /dev/sdf)
 
 3. Logged into your micro-instance, attach the new drive by doing (assuming the volume was mounted as /dev/sdf and you run Ubuntu 12.04 or later):
 
