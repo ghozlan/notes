@@ -181,3 +181,22 @@ if m:
 else:
     print "no match"    
 ```
+
+compile
+
+```
+#%% compile
+
+# Suppose we have many filenames/strings that we want to compare against the same pattern. 
+f1 = "channela_scheme1_121140_py"
+f2 = "channela_scheme2_121318_py"
+f3 = "channele_scheme1_120950_py"
+f4 = "channele_scheme2_121500_py"
+
+# It is more convenient to describe the pattern once, then use 'search' or 'match' repeatedly.
+ch_sch_pattern = re.compile(r"channel(?P<ch>.)_scheme(?P<sch>.)")
+print ch_sch_pattern.search(f1).groupdict() # {'ch': 'a', 'sch': '1'}
+print ch_sch_pattern.search(f2).groupdict() # {'ch': 'a', 'sch': '2'}
+print ch_sch_pattern.search(f3).groupdict() # {'ch': 'e', 'sch': '1'}
+print ch_sch_pattern.search(f4).groupdict() # {'ch': 'e', 'sch': '2'}
+```
