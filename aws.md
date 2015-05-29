@@ -257,10 +257,11 @@ sudo swapon /dev/xvdf
 * nano
 
 ## nano
+* For help/guide, press Ctrl+G
 * To cut/copy and paste multiple lines:
   1. At the first line, press Ctrl+^ (Ctrl+Shift+6) to start marking the lines.
   2. Move the cursor using arrow keys to the last line (and see the lines being highlighted).
   3. Press Ctrl+K to cut (kut) or Alt+M to copy.
   4. Press Ctrl+U to paste (uncut).
+* Indent/Unindent: press Alt+} (Alt+Shift+]) to indent and press Alt+{ (Alt+Shift+[) to unindent. 
 
-[Reference](http://www.peachpit.com/articles/article.aspx?p=2237914&seqNum=4)
