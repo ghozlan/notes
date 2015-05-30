@@ -15,6 +15,8 @@
 - [x] regex: re.complile vs re.search (29.5.15) 
 
       `re.compile(pattern).search(string)` is functionally equivalent to `re.search(pattern, string)`
+- [ ] regex: re.compile().sub(,)
+- [ ] regex: re.compile().split()
 - [x] profiler ( 28.5.15)
 - [x] line profiler ( 28.5.15)
 - [x] memory profiler ( 28.5.15)
