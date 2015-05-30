@@ -200,3 +200,10 @@ print ch_sch_pattern.search(f2).groupdict() # {'ch': 'a', 'sch': '2'}
 print ch_sch_pattern.search(f3).groupdict() # {'ch': 'e', 'sch': '1'}
 print ch_sch_pattern.search(f4).groupdict() # {'ch': 'e', 'sch': '2'}
 ```
+
+raw string literal
+```
+# r"...": raw string literal
+print "a\\b"    # output: a\b
+print r"a\\b"   # output: a\\b
+```
