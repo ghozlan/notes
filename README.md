@@ -9,8 +9,10 @@
 - [ ] figure position and size
 - [ ] figure fontsize in xlabel, ylabel
 - [ ] figure fontsize in legend
-- [ ] regex: how to get x and y in pattern channelx_schemey_...? re.compile?
-- [ ] regex: re.complile vs re.search
+- [x] regex: how to get x and y in pattern channelx_schemey_...? (29.5.12)
+      wrote some notes about in another file in the repo
+- [x] regex: re.complile vs re.search (29.5.15) 
+      `re.compile(pattern).search(string)` is functionally equivalent to `re.search(pattern, string)`
 - [x] profiler ( 28.5.15)
 - [x] line profiler ( 28.5.15)
 - [x] memory profiler ( 28.5.15)
