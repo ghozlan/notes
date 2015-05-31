@@ -3,6 +3,10 @@
 - [x] how to create a to-do list: https://help.github.com/articles/writing-on-github/#task-lists
 - [ ] how to get absolute url up to the repo main level
 - [ ] remove a commit? an intermediate commit
+- [ ] branch vs fork
+
+# Bit Bucket
+- [ ] links in bitbucket (markdown?)
 
 # Python
 - [ ] figure name
