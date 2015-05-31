@@ -52,7 +52,7 @@
   - Git LaTeX report?
    
 # More
-- [ ] bitbucket
+- [x] bitbucket (created account on 29.5.15)
 - [ ] mapreduce in python
 - [ ] spark (berkeley stack) in python
 - [ ] mysql/python
