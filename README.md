@@ -4,7 +4,19 @@
 - [ ] how to get absolute url up to the repo main level
 - [ ] remove a commit? an intermediate commit
 - [ ] branch vs fork
+- [x] get a list of remote aliases: check [remote "..."] entries in
+      
+           
+            cat .git/config
+           
+- [x] upload a repo created on local server to GitHub:
+      1. Push an existing repository from the command line
 
+            git remote add origin https://github.com/ghozlan/<repo-name>.git
+            git push -u origin master
+                  
+      2. Use "Publish Repository" in GitHub desktop
+      
 # Bit Bucket
 - [ ] links in bitbucket (markdown?)
 - [x] import a git repo from github into bitbucket: possible through Repositories> Import repository
