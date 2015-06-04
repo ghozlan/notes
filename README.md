@@ -7,6 +7,8 @@
 
 # Bit Bucket
 - [ ] links in bitbucket (markdown?)
+- [x] import a git repo from github into bitbucket: possible through Repositories> Import repository
+- [ ] upload a git repo from local machine into bitbucket
 
 # Python
 - [ ] figure name
