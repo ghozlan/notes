@@ -10,7 +10,7 @@
             cat .git/config
            
 - [x] upload a repo created on local server to GitHub:
-      1. Push an existing repository from the command line
+      1. Push an existing repository from the command line (the commands are given by GitHub after a new repo is created)
 
             git remote add origin https://github.com/ghozlan/<repo-name>.git
             git push -u origin master
@@ -20,7 +20,17 @@
 # Bit Bucket
 - [ ] links in bitbucket (markdown?)
 - [x] import a git repo from github into bitbucket: possible through Repositories> Import repository
-- [ ] upload a git repo from local machine into bitbucket
+- [x] upload a git repo from local machine into bitbucket
+      1.  Push an existing repository from the command line (the commands are given by Bitbucket after a new repo is created)
+            
+            cd /path/to/my/repo
+            git remote add origin https://ghozlan@bitbucket.org/ghozlan/<repo-name>.git
+            git push -u origin --all # pushes up the repo and its refs for the first time
+            git push -u origin --tags # pushes up any tags
+      2. SourceTree: 
+            * Repository> Add Remote> Add. 
+            * Remote name: <alias> and URL / Path: https://ghozlan@bitbucket.org/ghozlan/<repo-name>.git
+            * Push
 
 # Python
 - [ ] figure name
