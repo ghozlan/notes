@@ -73,10 +73,15 @@
 # Cloud/Online IDEs
 - Koding
 - Nitrous, free plan requires phone number (24.5.15)
+      - Free tier: 2 hours/day + 10 GB storage. See pricing [here](https://pro.nitrous.io/pricing/#free)!
+      - File transfer: possible through FileZilla (need public/private keys).
+      - How to access GitHub in nitrous?
 - Cloud 9 
 - Codenvy?
 - PythonAnywhere
-
+      - Free tier: 100 CPU-seconds/day, 512 MB disk space and 2 consoles (bash or python). A CPU-second is one second of full-power usage on a High Frequency Intel Xeon E5-2670 v2 (Ivy Bridge) Processor (one CPU core on an Amazon AWS m3.xlarge instance). See pricing [here](https://www.pythonanywhere.com/pricing/)!
+      - Python packages numpy, scipy, matplotlib are already installed
+      - File transfer: upload/download is possible through the web interface. No public/private keys are required which makes the process simple.
    
 # More
 - [x] bitbucket (created account on 29.5.15)
