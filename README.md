@@ -67,13 +67,16 @@
   - PyCharm 
     - Lint
     - Fix import error
-  - Cloud IDE
-    - Koding
-    - Nitrous, free plan requires phone number (24.5.15)
-    - Cloud 9 
-    - Codenvy?
   - GitHub Pages
   - Git LaTeX report?
+
+# Cloud/Online IDEs
+- Koding
+- Nitrous, free plan requires phone number (24.5.15)
+- Cloud 9 
+- Codenvy?
+- PythonAnywhere
+
    
 # More
 - [x] bitbucket (created account on 29.5.15)
