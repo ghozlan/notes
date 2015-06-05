@@ -80,4 +80,6 @@
 - [ ] mapreduce in python
 - [ ] spark (berkeley stack) in python
 - [ ] mysql/python
-- [ ] kaggle
+- [x] kaggle (signed-up 4.6.15)
+
+# Kaggle
