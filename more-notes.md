@@ -207,3 +207,45 @@ raw string literal
 print "a\\b"    # output: a\b
 print r"a\\b"   # output: a\\b
 ```
+
+## matplotlib
+
+* `plt.FuncFormatter`
+
+```
+from sklearn.datasets import load_iris
+iris = load_iris()
+
+x_index = 0
+y_index = 1
+
+# this formatter will label the colorbar with the correct target names
+formatter = plt.FuncFormatter(lambda i, *args: iris.target_names[int(i)])
+ 
+plt.scatter(iris.data[:, x_index], iris.data[:, y_index], c=iris.target)
+plt.colorbar(ticks=[0, 1, 2], format=formatter)
+plt.xlabel(iris.feature_names[x_index])
+plt.ylabel(iris.feature_names[y_index])
+```
+
+* `fig = figure`
+* `fig.subplots_adjust(...)`
+* `ax = fig.add_subplot(...)`
+* `ax.imshow(...)`
+
+```
+from sklearn.datasets import load_digits
+digits = load_digits()
+
+# set up the figure
+fig = plt.figure(figsize=(6, 6))  # figure size in inches
+fig.subplots_adjust(left=0, right=1, bottom=0, top=1, hspace=0.05, wspace=0.05)
+
+# plot the digits: each image is 8x8 pixels
+for i in range(64):
+    ax = fig.add_subplot(8, 8, i + 1, xticks=[], yticks=[])
+    ax.imshow(digits.images[i], cmap=plt.cm.binary)
+    
+    # label the image with the target value
+    ax.text(0, 7, str(digits.target[i]))
+```
