@@ -81,3 +81,6 @@ query = "select profileName, productId, score, summary from users join reviews u
 list_of_tups = cursor.execute(query, ['%great%', 4])
 pprint.pprint(list(cursor))
 ```
+
+## Resources
+* W3Schools: http://www.w3schools.com/sql/
