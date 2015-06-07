@@ -14,6 +14,14 @@ mysql --user=root --password=root
 mysql> show databases;
 ```
 
+```
+mysql> use <database_name>;
+```
+
+```
+mysql> show tables;
+```
+
 ### Python Connector
 
 * Install
