@@ -182,7 +182,7 @@ sudo apt-get -y install python-matplotlib
 ```
 The `-y` option of `apt-get` to assume *yes* as a default answer.
 
-### Plotting in command line [error]
+### Matplotlib error
 ```
     fig = figure()
   File "/usr/lib/pymodules/python2.7/matplotlib/pyplot.py", line 423, in figure
@@ -195,7 +195,12 @@ The `-y` option of `apt-get` to assume *yes* as a default answer.
     self.tk = _tkinter.create(screenName, baseName, className, interactive, wantobjects, useTk, sync, use)
 _tkinter.TclError: no display name and no $DISPLAY environment variable
 ```
-
+To fix this error, insert the following berfore any other pylab/matplotlib import
+```
+import matplotlib
+matplotlib.use('Agg') # force matplotlib to not use any Xwindows backend.
+```
+[Reference: stackflow](http://stackoverflow.com/questions/2801882/generating-a-png-with-matplotlib-when-display-is-undefined)
 ### PIP Python Package Manager [no virtualenv]
 
 Seems difficult. 
