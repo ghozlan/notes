@@ -84,3 +84,6 @@ pprint.pprint(list(cursor))
 
 ## Resources
 * W3Schools: http://www.w3schools.com/sql/
+* https://github.com/ga-students/DS-LA-03/wiki/Lesson-03-MySQL-Exercises-Using-W3-School
+* https://github.com/adparker/GADSLA_1403/wiki/Lesson-03-MySQL-5-Tutorial-01
+* https://github.com/ga-students/DS-LA-03/wiki/Lesson-03-SQL-&-Python
