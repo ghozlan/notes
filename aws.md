@@ -247,6 +247,17 @@ To deactivate current environment
 
 [Reference](http://simononsoftware.com/virtualenv-tutorial/)
 
+## Installing MySQL Server
+To install, run
+```
+sudo apt-get install mysql-server
+```
+You will be prompted to choose the root password.
+To start using mysql server, run
+```
+mysql --user=<user> --pass=<password>
+```
+
 ## Adding Virtual Memory
 
 1. Create a EBS-volume with for example 1 GB (if you want to add 1 GB virtual memory).
