@@ -258,6 +258,14 @@ To start using mysql server, run
 mysql --user=<user> --pass=<password>
 ```
 
+## Installiing MySQL Connector
+Using pip
+
+```
+sudo pip install --allow-external mysql-connector-python mysql-connector-python 
+```
+[Reference](https://geert.vanderkelen.org/installing-coy-using-pip/)
+ 
 ## Adding Virtual Memory
 
 1. Create a EBS-volume with for example 1 GB (if you want to add 1 GB virtual memory).
