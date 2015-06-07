@@ -18,6 +18,7 @@ mysql> show databases;
 
 * Install
     * Download from http://dev.mysql.com/downloads/connector/python/
+    * Using pip.
 
 * Use
 ```
