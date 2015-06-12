@@ -191,3 +191,14 @@ echo "Closed connection to mysql server";
 echo "PHP script finished";
 ?>
 ```
+
+A more terse script:
+
+```
+<?php
+//Connecting to sql db.
+$connect = mysqli_connect("localhost","root","root","comments_db");
+
+//Sending form data to sql db.
+mysqli_query($connect,"INSERT INTO comments(title, content) VALUES ('$_POST[title]', '$_POST[content]')");
+?>
