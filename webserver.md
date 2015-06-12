@@ -83,3 +83,111 @@ sudo chmod 755 sites/default
 -->
 
 [REF](http://docs.aws.amazon.com/gettingstarted/latest/wah-linux/getting-started-deploy-app.html/)
+
+# PHP-MySQL
+## Initialize database
+* From MySQL command-line:
+
+```
+sudo mysql -u root -p
+
+CREATE DATABASE comments_db;
+
+CREATE TABLE comments_db.comments(
+id INT NOT NULL AUTO_INCREMENT,
+title VARCHAR(20) NULL,
+content VARCHAR(500) NULL,
+PRIMARY KEY (id)
+);
+```
+
+* Python script (will have to create the database apriori though)
+```
+create_db_query = \
+"CREATE DATABASE comments_db;"
+
+create_table_query = \
+"CREATE TABLE comments_db.comments(" + \
+"id INT NOT NULL AUTO_INCREMENT," + \
+"title VARCHAR(20) NULL," + \
+"content VARCHAR(500) NULL," + \
+"PRIMARY KEY (id)" + \
+");"
+
+import datetime
+import mysql.connector
+cnx = mysql.connector.connect(user='root', password='root', database='comments_db')
+cursor = cnx.cursor()
+
+#cursor.execute(create_db_query) # can not do this because we need the database name to start mysql connection
+cursor.execute(create_table_query)
+```
+
+## HTML form
+
+```
+<html>
+<body>
+
+<h1> Welcome! Leave your comment below! </h1>
+
+<a id="form"> Form </a>
+
+<form action="send_post.php" method="post">
+    <h3>Title</h3>
+    <input type="text" name="title">
+    <h3>Text</h3>
+    <textarea rows="5" cols="60" name="content"></textarea>
+    <input type="submit">
+</form>
+
+</body>
+</html>
+```
+
+*Important*: use `action` not `onSubmit`
+
+## Using PHP to read from HTML form and write to MySQL database
+
+The php file `send_post.php` is
+
+```
+<?php
+echo "PHP script starting";
+echo PHP_EOL;
+
+//Defining some constants
+define('DB_HOST','localhost');
+define('DB_NAME','comments_db');
+define('DB_USER','root');
+define('DB_PASS','root');
+
+//Connecting to mysql server.
+$link = mysql_connect(DB_HOST,DB_USER,DB_PASS);
+if(!$link){ die('Can not connect: ' . mysql_error()); }
+//echo 'Connected successfully to server';
+echo "Connected successfully to server (at " . DB_HOST . ")\n";
+
+//Selecting a database
+$db_selected = mysql_select_db(DB_NAME, $link);
+if(!$db_selected){ die('Can not use' . DB_NAME . ':' . mysql_error()); }
+echo "Selected successfully database " . DB_NAME . "\n";
+
+//Sending form data to sql db.
+$title = $_POST['title'];
+$content = $_POST['content'];
+echo 'title:' . $title;
+echo 'content:' . $content;
+$query = "INSERT INTO comments(title, content) VALUES('$title','$content')";
+//$query = "INSERT INTO comments(title, content) VALUES('harcoded title','harcoded content')";
+//$query = "SELECT * FROM comments_db.comments";
+$result = mysql_query($query);
+if(!$result){ die('Error: ' . mysql_error()); }
+
+//Closing connection to mysql server
+mysql_close();
+echo "Closed connection to mysql server";
+
+echo "PHP script finished";
+?>
+```
