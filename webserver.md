@@ -101,7 +101,8 @@ PRIMARY KEY (id)
 );
 ```
 
-* Python script (will have to create the database apriori though)
+* Or using a Python script (will have to create the database apriori though)
+
 ```
 create_db_query = \
 "CREATE DATABASE comments_db;"
@@ -121,6 +122,14 @@ cursor = cnx.cursor()
 
 #cursor.execute(create_db_query) # can not do this because we need the database name to start mysql connection
 cursor.execute(create_table_query)
+```
+
+Note: An example of how to insert new data in a table:
+
+```
+query = "INSERT INTO comments(title,content) VALUES('sickboy','uninterrupted downwards trajectory');"
+cursor.execute(query)
+cnx.commit() # IMPORTANT! Without this, the new data will not be written to the database
 ```
 
 ## HTML form
