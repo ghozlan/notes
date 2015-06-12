@@ -215,6 +215,7 @@ mysqli_query($connect,"INSERT INTO comments(title, content) VALUES ('$_POST[titl
 
 # Python Web Frameworks
 
+https://wiki.python.org/moin/WebFrameworks
 
 # Python Flask
 
@@ -310,3 +311,6 @@ def list_messages():
 if __name__ == '__main__': # If we're executing this app from the command line
     app.run("localhost", port = 3000, debug = True)
 ```
+
+## More Flask resources:
+* http://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-i-hello-world
