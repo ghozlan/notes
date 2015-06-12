@@ -18,3 +18,9 @@ sudo mysql -u root -p
 ```
 
 LAMP: Linux Apache MySQL PHP
+
+Remember:
+```
+sudo apt-get install python-pip
+sudo pip install --allow-external mysql-connector-python mysql-connector-python 
+```
