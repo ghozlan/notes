@@ -22,6 +22,10 @@ mysql> use <database_name>;
 mysql> show tables;
 ```
 
+```
+mysql> show columns from <table_name>;
+```
+
 ### Python Connector
 
 * Install
