@@ -211,3 +211,102 @@ $connect = mysqli_connect("localhost","root","root","comments_db");
 //Sending form data to sql db.
 mysqli_query($connect,"INSERT INTO comments(title, content) VALUES ('$_POST[title]', '$_POST[content]')");
 ?>
+```
+
+# Python Web Frameworks
+
+
+# Python Flask
+
+## Install (and Hello World app)
+```
+sudo pip install flask
+```
+
+Create `hello.py`:
+```
+from flask import Flask
+app = Flask(__name__)
+
+@app.route("/")
+def hello():
+    return "Hello World!"
+
+if __name__ == "__main__":
+    app.run()
+ ```
+ then run
+ ```
+ python hello.py
+ * Running on http://localhost:5000/
+ ```
+ 
+## HTML form
+
+Create `form.html` file:
+
+```
+<html>
+<body>
+  <div id="form">
+    <form method="post" action="/submit-form/"> <!--telling the form where to send user input-->
+    <label>Phone Number (no characters): </label>
+    <input type="text" name="number" size="40" />
+    <p><input type="submit" value="Send"></p>
+    </form>
+  </div>
+</body>
+</html>
+```
+
+## HTML-Python
+
+Create `messages.html` file:
+```
+<html>
+<body>
+  <div id="form">
+
+    <p><b>Success!</b> Let's see the messages:</p>
+    {% for m in messages %}
+    "{{m.body}}" <br />
+    {% endfor %}
+
+  </div>
+</body>
+</html>
+```
+
+## Python Flask App
+
+Create `flask_app.py` file:
+```
+from flask import Flask 
+from flask import render_template
+from flask import request, redirect
+
+#from twilio.rest import TwilioRestClient 
+
+app = Flask(__name__) # Creating the Flask app
+#client = TwilioRestClient ('TWILIO_ACCOUNT_SID = os.environ['TWILIO_ACCOUNT_SID']', 'TWILIO_AUTH_TOKEN = os.environ['TWILIO_AUTH_TOKEN']') # Paste in your AccountSID and AuthToken here
+twilio_number = "+1234567890" # Replace with your Twilio number
+
+@app.route("/") # When you go to top page of app, this is what it will execute
+def main():
+    return render_template('form.html')
+  
+@app.route("/submit-form/", methods = ['POST']) 
+def submit_number():
+    number = request.form['number']
+    formatted_number = "+1" + number # Switch to your country code of choice
+    return redirect('/messages/')
+  
+@app.route("/messages/")
+def list_messages():
+    messages = ['first message', 'second message']
+    return render_template('messages.html', messages = messages)
+    
+    
+if __name__ == '__main__': # If we're executing this app from the command line
+    app.run("localhost", port = 3000, debug = True)
+```
