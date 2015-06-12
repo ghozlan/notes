@@ -48,6 +48,7 @@
 - [x] profiler ( 28.5.15)
 - [x] line profiler ( 28.5.15)
 - [x] memory profiler ( 28.5.15)
+- [ ] structured arrays in numpy/scipy
 
 # MATLAB
   - Dynamic field indexing in structures
