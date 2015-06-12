@@ -49,6 +49,7 @@
 - [x] line profiler ( 28.5.15)
 - [x] memory profiler ( 28.5.15)
 - [ ] structured arrays in numpy/scipy
+- [ ] create a new database using mysql connector on python
 
 # MATLAB
   - Dynamic field indexing in structures
@@ -93,3 +94,7 @@
 - [x] kaggle (signed-up 4.6.15)
 
 # Kaggle
+
+# LAMP
+- [ ] unpack mysql query results in php
+- [ ] call python script on the submittion of an HTML form (is it `onSubmit` or `action` or something else?)
