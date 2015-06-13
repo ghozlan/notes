@@ -270,7 +270,7 @@ Create `messages.html` file:
 
     <p><b>Success!</b> Let's see the messages:</p>
     {% for m in messages %}
-    "{{m.body}}" <br />
+    {{m.user}} says: "{{m.body}}" <br>
     {% endfor %}
 
   </div>
@@ -286,11 +286,7 @@ from flask import Flask
 from flask import render_template
 from flask import request, redirect
 
-#from twilio.rest import TwilioRestClient 
-
 app = Flask(__name__) # Creating the Flask app
-#client = TwilioRestClient ('TWILIO_ACCOUNT_SID = os.environ['TWILIO_ACCOUNT_SID']', 'TWILIO_AUTH_TOKEN = os.environ['TWILIO_AUTH_TOKEN']') # Paste in your AccountSID and AuthToken here
-twilio_number = "+1234567890" # Replace with your Twilio number
 
 @app.route("/") # When you go to top page of app, this is what it will execute
 def main():
@@ -304,12 +300,15 @@ def submit_number():
   
 @app.route("/messages/")
 def list_messages():
-    messages = ['first message', 'second message']
+    messages = [ 
+    {'user':'Jack', 'body':'Jack the reaper is here!'},
+    {'user':'Dabboor', 'body':'Yo!Yo!Yo!'}
+    ] 
     return render_template('messages.html', messages = messages)
     
     
 if __name__ == '__main__': # If we're executing this app from the command line
-    app.run("localhost", port = 3000, debug = True)
+    app.run(host="localhost", port = 3000, debug = True)
 ```
 
 ## Organize files
