@@ -312,5 +312,8 @@ if __name__ == '__main__': # If we're executing this app from the command line
     app.run("localhost", port = 3000, debug = True)
 ```
 
+## Organize files
+Create a directory named `templates` on the same level of `flask_app.py` and place `form.html` and `messages.html` in it.
+
 ## More Flask resources:
 * http://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-i-hello-world
