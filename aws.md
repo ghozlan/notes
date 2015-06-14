@@ -325,6 +325,8 @@ cat /etc/fstab
   * `src port` and `dst port` to specify a source or destination port respectively.
   * `-n`: do not resolve names.
   * `-i <interface>`: specify the network interface. `-i any` captures traffic on any interface.
+  
+ [Ref](http://www.rationallyparanoid.com/articles/tcpdump.html)
 * nmap
 
 ## nano
