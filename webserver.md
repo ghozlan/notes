@@ -252,7 +252,7 @@ Create `form.html` file:
   <div id="form">
     <form method="post" action="/submit-form/"> <!--telling the form where to send user input-->
     <label>Phone Number (no characters): </label>
-    <input type="text" name="number" size="40" />
+    <input type="text" name="number" size="40">
     <p><input type="submit" value="Send"></p>
     </form>
   </div>
