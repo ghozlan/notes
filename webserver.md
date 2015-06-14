@@ -254,7 +254,7 @@ Create `form.html` file:
 
 <a id="form"> Form </a>
 
-<form action="send_post" method="post">
+<form action="send_post/" method="post">
     <h3>Title</h3>
     <input type="text" name="title">
     <h3>Text</h3>
@@ -266,8 +266,10 @@ Create `form.html` file:
 </html>
 ```
 
-Note that the file is the same as that in the php section 
-expect that `action='send_post.php'` is replaced here with `action='send_post'`!
+Notes
+* The file is the same as that in the php section 
+expect that `action='send_post.php'` is replaced here with `action='send_post/'`!
+* **Important**: writing `action='send_post'` instead of `action='send_post/'`(i.e., leaving out the `/`) gives 301 (Moved Permanently) and possibly 405 (Method not allowed) errors.
 
 ## HTML-Python
 
