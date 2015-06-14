@@ -249,33 +249,44 @@ Create `form.html` file:
 ```
 <html>
 <body>
-  <div id="form">
-    <form method="post" action="/submit-form/"> <!--telling the form where to send user input-->
-    <label>Phone Number (no characters): </label>
-    <input type="text" name="number" size="40">
-    <p><input type="submit" value="Send"></p>
-    </form>
-  </div>
+
+<h1> Welcome! Leave your comment below! </h1>
+
+<a id="form"> Form </a>
+
+<form action="send_post" method="post">
+    <h3>Title</h3>
+    <input type="text" name="title">
+    <h3>Text</h3>
+    <textarea rows="5" cols="60" name="content"></textarea>
+    <input type="submit">
+</form>
+
 </body>
 </html>
 ```
+
+Note that the file is the same as that in the php section 
+expect that `action='send_post.php'` is replaced here with `action='send_post'`!
 
 ## HTML-Python
 
-Create `messages.html` file:
+Create `comments.html` file:
 ```
 <html>
+<head>
+  <title>Linux Apache MySQL Python Flask</title>
+</head>
 <body>
   <div id="form">
-
-    <p><b>Success!</b> Let's see the messages:</p>
-    {% for m in messages %}
-    {{m.user}} says: "{{m.body}}" <br>
+    <h2>Comments</h2>
+    {% for comment in comments %}
+    {{comment.title}} <br>  {{comment.content}} <hr>
     {% endfor %}
-
   </div>
 </body>
 </html>
+
 ```
 
 ## Python Flask App
@@ -291,24 +302,50 @@ app = Flask(__name__) # Creating the Flask app
 @app.route("/") # When you go to top page of app, this is what it will execute
 def main():
     return render_template('form.html')
-  
-@app.route("/submit-form/", methods = ['POST']) 
-def submit_number():
-    number = request.form['number']
-    formatted_number = "+1" + number # Switch to your country code of choice
-    return redirect('/messages/')
-  
-@app.route("/messages/")
-def list_messages():
-    messages = [ 
-    {'user':'Jack', 'body':'Jack the reaper is here!'},
-    {'user':'Dabboor', 'body':'Yo!Yo!Yo!'}
-    ] 
-    return render_template('messages.html', messages = messages)
-    
-    
+
+
+@app.route("/send_post/", methods = ['POST']) 
+def submit_comment():
+    title = request.form['title']
+    content = request.form['content']
+
+    import mysql.connector
+    connection = mysql.connector.connect(user='root', password='root', database='comments_db')
+    cursor = connection.cursor()
+    query = "INSERT INTO comments(title,content) VALUES('%s', '%s');" % (title,content)
+    cursor.execute(query)
+    connection.commit()
+
+    #return  title + ": " + content
+    #return query
+    return redirect('/comments/')
+
+def get_comments():
+    import mysql.connector
+    connection = mysql.connector.connect(user='root', password='root', database='comments_db')
+    cursor = connection.cursor()
+
+    query = "SELECT title, content FROM comments;"
+    cursor.execute(query)
+    results = list(cursor)
+
+    comments = list()
+    for result in results:
+       comment = {'title':result[0], 'content':result[1]}
+       comments.append(comment)
+
+    return comments
+
+@app.route("/comments/") 
+def list_comments():
+    comments = get_comments()
+    #comments = [ {'title':'nike','content':'just do it!'}, 
+    #{'title':'apple','content':'think different'} ]
+    return render_template('comments.html', comments = comments)
+
 if __name__ == '__main__': # If we're executing this app from the command line
-    app.run(host="localhost", port = 3000, debug = True)
+   #app.run(host="localhost", port=8080, debug=True)
+   app.run(host="localhost", port=8080, debug=False)
 ```
 
 ## Organize files
