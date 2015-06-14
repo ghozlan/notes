@@ -355,7 +355,7 @@ Notes:
 
 
 ## Organize files
-Create a directory named `templates` on the same level of `flask_app.py` and place `form.html` and `messages.html` in it.
+Create a directory named `templates` at the same level of `flask_app.py` and place `form.html` and `comments.html` in it.
 
 ## More Flask resources:
 * http://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-i-hello-world
