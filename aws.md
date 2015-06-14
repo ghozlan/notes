@@ -314,7 +314,8 @@ cat /etc/fstab
 * To cut/copy and paste multiple lines:
   1. At the first line, press Ctrl+^ (Ctrl+Shift+6) to start marking the lines.
   2. Move the cursor using arrow keys to the last line (and see the lines being highlighted).
-  3. Press Ctrl+K to cut (kut) or Alt+M to copy.
+  3. Press Ctrl+K to cut (kut) or Alt+M (or is it Alt+6?) to copy.
   4. Press Ctrl+U to paste (uncut).
+* Hint: Pressing Ctlr+U multiple times will paste (uncut) the buffer multiple times. This can be used to copy/paste.
 * Indent/Unindent: press Alt+} (Alt+Shift+]) to indent and press Alt+{ (Alt+Shift+[) to unindent. 
 
