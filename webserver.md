@@ -348,7 +348,11 @@ if __name__ == '__main__': # If we're executing this app from the command line
    app.run(host="0.0.0.0", port=8080, debug=False)
 ```
 
-Note: Setting `host` to `"localhost"` (or `"127.0.0.1"`) does not make the server available externally.
+Notes: 
+* Setting `host` to `"localhost"` (or `"127.0.0.1"`) does not make the server available externally.
+* Set `host="0.0.0.0"` to make the server available externally.
+* If using AWS, do not forget to allow to add to the Security Group a rule to allow inbound traffic on the port the server is listening on.
+
 
 ## Organize files
 Create a directory named `templates` on the same level of `flask_app.py` and place `form.html` and `messages.html` in it.
