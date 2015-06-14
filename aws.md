@@ -308,6 +308,24 @@ cat /etc/fstab
 * colordiff
 * htop
 * nano
+* netstat
+  ```
+  netstat -lan
+  ```
+* tcpdump
+  * Capture http traffic and write `-w` to file `capture.cap`
+   ```
+   sudo tcpdump port http -w capture.cap
+   ```
+  * Display the packets of a file called `capture.cap`:
+   ```
+   tcpdump -r capture.cap
+   ```
+  * `-v`,`-vv`,`--v`: vebosity level.
+  * `src port` and `dst port` to specify a source or destination port respectively.
+  * `-n`: do not resolve names.
+  * `-i <interface>`: specify the network interface. `-i any` captures traffic on any interface.
+* nmap
 
 ## nano
 * For help/guide, press Ctrl+G
