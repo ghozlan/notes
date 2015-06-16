@@ -16,6 +16,12 @@
             git push -u origin master
                   
       2. Use "Publish Repository" in GitHub desktop
+ 
+- [x] commit part of file
+      ```
+      git add --patch filename.ext
+      ```
+      See [this](http://stackoverflow.com/questions/1085162/commit-only-part-of-a-file-in-git)
       
 # Bit Bucket
 - [ ] links in bitbucket (markdown?)
