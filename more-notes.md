@@ -1,34 +1,49 @@
 ## IPython
 
-%lsmagic
+* To launch
+ ```
+ ipython notebook
+ ```
 
-2+10
+* Magic commends
+ ```
+ %lsmagic
+ ```
 
- _ : last output, __ next to last output, and so on
-_+13
+*  _ : last output, __ next to last output, and so on
+ ```
+ 2+10
+ _+13
+ ```
+* ; suppresses output
 
-; suppresses output
-10+20;
+* ! enables shell commands
+ ```
+ !pwd
+ !dir
+ ```
 
-! enables shell commands
-!pwd
+* output from shell stored as a python list
+ ```
+ files = !dir 
+ ```
 
-!dir
+* what is inside {} is evaluated as python
+ ```
+ !echo {files[0].upper()} 
+ ```
 
-output from shell stored as a python list
-files = !dir 
-
-what is inside {} is evaluated as python
-!echo {files[0].upper()} 
-
-
+* **What does this do?**
+```
 from IPython import embed
 embed(header='ipython embed')
+```
 
-ipython notebook --script
-ipython notebook --pylab=inline
+* `ipython notebook --script`
 
-in IPython Notebook: Ctrl+h lists keyboard shortcuts
+* `ipython notebook --pylab=inline`
+
+* Keyboard Shortcurt: Ctrl+m h in IPython Notebook
 
 ## Python
 ```
