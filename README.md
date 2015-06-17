@@ -17,12 +17,13 @@
                   
       2. Use "Publish Repository" in GitHub desktop
  
-- [x] commit part of file
+- [x] commit part of file (hunk)
       ```
       git add --patch filename.ext
       ```
       See [this](http://stackoverflow.com/questions/1085162/commit-only-part-of-a-file-in-git)
-      
+- [ ]  revert one file (not all the files) to the version of a specific commit
+
 # Bit Bucket
 - [ ] links in bitbucket (markdown?)
 - [x] import a git repo from github into bitbucket: possible through Repositories> Import repository
