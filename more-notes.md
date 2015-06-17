@@ -5,7 +5,7 @@
  ipython notebook
  ```
 
-* Magic commends
+* To list magic commands
  ```
  %lsmagic
  ```
@@ -39,11 +39,31 @@ from IPython import embed
 embed(header='ipython embed')
 ```
 
-* `ipython notebook --script`
+* To launch ipython notebook
+ ```
+ ipython notebook
+ ```
 
-* `ipython notebook --pylab=inline`
+* To get more help about the options of launching notebook
+ ```
+ ipython help notebook
+ ```
 
-* Keyboard Shortcurt: Ctrl+m h in IPython Notebook
+* To enable plots within notebooks
+ * `ipython notebook --pylab=inline`
+ * `%pylab`
+
+* To auto-save a .py script everytime the .ipynb notebook is saved, start notebook with `--script`
+```
+ipython notebook --script
+```
+
+* Convert `<notebook.ipynb>` to python script `<notebook.py>`
+```
+ipython nbconvert --to python <notebook.ipynb>
+```
+
+* Keyboard shortcurts: Ctrl+m h in ipython notebook
 
 ## Python
 ```
