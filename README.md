@@ -22,8 +22,29 @@
       git add --patch filename.ext
       ```
       See [this](http://stackoverflow.com/questions/1085162/commit-only-part-of-a-file-in-git)
-- [ ]  revert one file (not all the files) to the version of a specific commit
+      
+- [x] revert one file (not all the files) to the version of a specific commit (20.6.15)
+      This could be done by checking out only that file from the commit you want:
+      
+      ```
+      git checkout <commit> <filename>
+      ```
+      
+      Note: To see the commits, use
+      
+      ```
+      git log --oneline
+      ```
 
+      The output looks like:
+      ```
+      ...
+      30db46e MU-MIMO Uplink
+      0f37b40 Updated mimo.py
+      4b8b164 SU-MIMO 2x2
+      8a37f64 Initial commit
+      ```
+      
 # Bit Bucket
 - [ ] links in bitbucket (markdown?)
 - [x] import a git repo from github into bitbucket: possible through Repositories> Import repository
