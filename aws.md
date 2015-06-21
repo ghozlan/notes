@@ -38,6 +38,11 @@ Compute> EC2> Instances> Instances
   * Ctrl+a A: set title for screen
   * Ctrl+a ": select screen from list  
   * Ctrl+a d: detatch
+  * Splitting into regions:
+    * Ctrl+a S (Shift+s): split vertically
+    * Ctrl+a | : split horizontally
+    * Ctrl+a tab : switch focus between regions
+    * Ctrl+a X (Shift+x): remove/kill the current region (the region in focus)
   * screen -r: resume session
 
 ## Transferring files using FileZilla
