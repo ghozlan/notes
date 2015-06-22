@@ -118,6 +118,23 @@ print m.group()
 
 # execute/run a script
 #execfile(filename) #filename should include .py
+
+# list comprehension
+my_list = [i for i in range(5) if i%2==0]
+# my_list = [0, 2, 4]
+
+# generator comprehension
+gen = (i for i in range(5) if i%2==0)
+# gen = <generator object <genexpr> at 0x00000000XXXXXXXX>
+# can be iterated over once, e.g., gen.next() or for g in gen
+# can be converted to list: list(gen)
+
+# enumerate
+enum = enumerate(['venus', 'jupiter', 'pluto'])
+# <enumerate at 0xXXXXXXXX>
+# you get (0,'venus'), (1,'jupiter'), (2,'pluto')
+# can be iterated over once?
+# can be converted to list: list(enum)
 ```
 
 ## Regular Expressions (RegEx)
