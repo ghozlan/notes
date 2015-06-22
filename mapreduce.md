@@ -117,3 +117,13 @@ with mr_job.make_runner() as runner:
     # for example, store output (probably when debuggying on a small set of data)
     results = [mr_job.parse_output_line(line) for line in runner.stream_output()]
 ```
+
+
+* Issue: when setting `runner` to `local`, we have
+
+    |                | one job  per job file | two jobs  per job file |
+    |----------------|:---------------------:|:----------------------:|
+    | laptop         |         error         |          error         |
+    | aws-ec2-ubuntu |                       |          error         |
+
+* Note: setting `runner` to `inline` works in all 4 cases.
