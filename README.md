@@ -120,6 +120,8 @@
 - [ ] spark (berkeley stack) in python
 - [ ] mysql/python
 - [x] kaggle (signed-up 4.6.15)
+- [ ] boto
+- [ ] elastic mapreduce on aws
 
 # Kaggle
 
