@@ -127,3 +127,84 @@ with mr_job.make_runner() as runner:
     | aws-ec2-ubuntu |                       |          error         |
 
 * Note: setting `runner` to `inline` works in all 4 cases.
+
+
+
+##Run mrjob on Elastic MapReduce (EMR)
+
+(http://mrjob.readthedocs.org/en/latest//en/latest/guides/emr-quickstart.html)
+
+`mrjob.conf`
+
+```
+runners:
+	emr:
+		aws_access_key_id: <access_key_id>
+		aws_secret_access_key: <secret_access_key>
+```
+
+Configuring SSH credentials
+
+Lets mrjob open an SSH tunnel to the master node to view live progress, see the job tracker in your browser, and so on.
+```
+runners:
+	emr:
+		ec2_key_pair: <key_name>
+		ec2_key_pair_file: /path/to/<key_name>.pem # ~/ and $ENV_VARS allowed here
+		ssh_tunnel_to_job_tracker: true
+``` 
+
+
+```
+export MRJOB_CONF=/home/ubuntu/my.mrjob.conf
+export EMR_KEY=/home/ubuntu
+```
+```
+runners:
+	emr:
+		ec2_key_pair: aws-emr
+		ec2_key_pair_file: $EMR_KEY/aws-emr.pem
+		ssh_tunnel_to_job_tracker: true
+``` 
+
+Sending output to a specific place
+```
+ python <job_file>.py -r emr <input_file> \
+--output-dir=s3://<bucket>/<path>/ \
+--no-output
+```
+
+Bootstrap and setup commands:
+Bootstrap commands are run once when starting the cluster (job flow)
+Setup commands are run for every job
+
+```
+runners:
+	emr:
+		aws_access_key_id: XXXXXXXX
+		aws_secret_access_key: XXXXXXXXXX
+		bootstrap:
+		- sudo apt-get update
+		- sudo apt-get install -y <linux-packages>
+		- sudo pip install <python-modules>
+		cleanup: NONE
+		cmdenv: &cmdenv
+		  TZ: America/Los_Angeles
+		ec2_key_pair: EMR
+		ec2_key_pair_file: AWS.pem
+		ec2_core_instance_type: m1.medium
+		num_ec2_core_instances: 2
+		pool_emr_job_flows: true
+		python_archives:
+		- current-source.tar.gz
+		s3_log_uri: s3://mrjob/logs/
+		s3_scratch_uri: s3://mrjob/tmp/
+		setup_cmds:
+		- make -f current-source/Makefile.emr"
+		ssh_tunnel_is_open: true
+		ssh_tunnel_to_job_tracker: true
+		visible_to_all_users: true
+```
+
+
+By default, mrjob runs a single m1.medium
