@@ -134,7 +134,8 @@ with mr_job.make_runner() as runner:
 
 (http://mrjob.readthedocs.org/en/latest//en/latest/guides/emr-quickstart.html)
 
-`mrjob.conf`
+### Minimalist
+* Need a configuration file with AWS credential. Create `mrjob.conf` (can choose another name) and write
 
 ```
 runners:
@@ -143,9 +144,65 @@ runners:
 		aws_secret_access_key: <secret_access_key>
 ```
 
-Configuring SSH credentials
+* Set environment variable `MRJOB_CONF` (environment variable must be named `MRJOB_CONF` so that mrjob can find it)
+```
+export MRJOB_CONF=<path>/<config-filename>
+```
 
-Lets mrjob open an SSH tunnel to the master node to view live progress, see the job tracker in your browser, and so on.
+* Run
+```
+ python <job_file>.py --runnerr emr <input_file> 
+```
+This will run the mapreduce job and will stream the ouptput after the job is done but will not save it, for example, in S3.
+
+**Note**: by default, mrjob runs a single m1.medium.
+
+### More options
+* To turn on job pooling, add to the config file:
+```
+runners:
+	emr:
+		pool_emr_job_flows: true
+```
+Job pooling does not shut down the cluser immediately after the job is done if it takes a fraction of an hour (AWS bills for a full hour even if a fraction is used) and wait for other jobs until it is about to hit a new hour.
+
+* To save the output (in an S3 bucket), run
+```
+ python <job_file>.py --runner emr <input_file> \
+--output-dir=s3://<bucket>/<path>/ \
+--no-output
+```
+Here `--no-output` means do not **stream** output. This makes sense when the output is saved on S3.
+
+* To specify the number of EC2 instances and their type, add to the config file:
+```
+runners:
+	emr:
+		ec2_core_instance_type: m1.medium
+		num_ec2_core_instances: 2
+```
+
+
+* Bootstrap and setup commands:
+Bootstrap commands are run once when starting the cluster (job flow).
+Setup commands are run for every job.
+To add bootstrap and setup commands, add to the config file:
+```
+runners:
+	emr:
+		bootstrap:
+		- sudo apt-get update
+		- sudo apt-get install -y <linux-packages>
+		- sudo pip install <python-modules>
+		- <other cmds>
+		setup_cmds:
+		- <cmd>
+		- <other cmd>
+```
+
+* To configuring SSH credentials
+(to mrjob open an SSH tunnel to the master node to view live progress, see the job tracker in your browser, and so on),
+add to the config file:
 ```
 runners:
 	emr:
@@ -154,11 +211,12 @@ runners:
 		ssh_tunnel_to_job_tracker: true
 ``` 
 
-
+Example:
+run
 ```
-export MRJOB_CONF=/home/ubuntu/my.mrjob.conf
 export EMR_KEY=/home/ubuntu
 ```
+and add to config file
 ```
 runners:
 	emr:
@@ -167,17 +225,38 @@ runners:
 		ssh_tunnel_to_job_tracker: true
 ``` 
 
-Sending output to a specific place
+**NOT WORKING:** "Failed to open ssh tunnel to job tracker"
+
+### Template
 ```
- python <job_file>.py -r emr <input_file> \
+runners:
+	emr:
+		aws_access_key_id: <access_key_id>
+		aws_secret_access_key: <secret_access_key>	
+		pool_emr_job_flows: true
+		ec2_core_instance_type: m1.medium
+		num_ec2_core_instances: 1
+		bootstrap:
+		- sudo apt-get update
+		- sudo apt-get install -y <linux-packages>
+		- sudo pip install <python-modules>
+		- <other cmds>
+		setup_cmds:
+		- <cmd>
+		- <other cmd>
+```
+
+```
+export MRJOB_CONF=<path>/<config-filename>
+```
+
+```
+ python <job_file>.py --runner emr <input_file> \
 --output-dir=s3://<bucket>/<path>/ \
 --no-output
 ```
 
-Bootstrap and setup commands:
-Bootstrap commands are run once when starting the cluster (job flow)
-Setup commands are run for every job
-
+### Sample realistic config file
 ```
 runners:
 	emr:
@@ -205,6 +284,3 @@ runners:
 		ssh_tunnel_to_job_tracker: true
 		visible_to_all_users: true
 ```
-
-
-By default, mrjob runs a single m1.medium
