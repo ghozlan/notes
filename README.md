@@ -60,6 +60,13 @@
             * Remote name: <alias> and URL / Path: https://ghozlan@bitbucket.org/ghozlan/<repo-name>.git
             * Push
 
+Pros:
+* Offers private repos.
+
+Cons:
+* No markdown preview
+* No check boxes in markdown (github has it, but I think it is not standard markdown)
+
 # Python
 - [ ] figure name
 - [ ] figure position and size
