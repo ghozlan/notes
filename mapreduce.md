@@ -317,3 +317,17 @@ Check that boto is able to verify credentials, by running in python (for example
 import boto
 s3 = boto.connect_s3()
 ```
+
+### Manage mrjob EMR job flows
+
+http://pythonhosted.org/mrjob/guides/emr-tools.html
+
+* Audit EMR usage over the past 2 weeks, sorted by job flow name and user.
+```
+python -m mrjob.tools.emr.audit_usage > report
+```
+
+* Terminate an existing EMR job flow.
+```
+python -m mrjob.tools.emr.terminate_job_flow [options] j-JOBFLOWID
+```
