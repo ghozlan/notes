@@ -322,7 +322,7 @@ s3 = boto.connect_s3()
 
 http://pythonhosted.org/mrjob/guides/emr-tools.html
 
-* Audit EMR usage over the past 2 weeks, sorted by job flow name and user.
+* Audit EMR usage over the past 2 weeks, sorted by job flow name and user. ([See sample report here](mrjob-reports.md))
 ```
 python -m mrjob.tools.emr.audit_usage > report
 ```
