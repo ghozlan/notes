@@ -226,6 +226,7 @@ runners:
 ``` 
 
 **NOT WORKING:** "Failed to open ssh tunnel to job tracker"
+* may need to change permission `chmod 600 <key>.pem`
 
 ### Template
 ```
