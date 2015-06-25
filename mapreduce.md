@@ -285,3 +285,35 @@ runners:
 		ssh_tunnel_to_job_tracker: true
 		visible_to_all_users: true
 ```
+
+
+### Errors:
+1. Error
+
+```
+boto.exception.NoAuthHandlerFound: No handler was ready to authenticate. 1 handlers were checked. 
+['HmacAuthV1Handler'] Check your credentials
+```
+
+boto can not verify credentials. See fix below!
+
+
+
+### Boto
+
+http://boto.readthedocs.org/en/latest/getting_started.html
+
+
+Create `~/.boto` file and write:
+
+```
+[Credentials]
+aws_access_key_id = <access_key_id>
+aws_secret_access_key = <secret_access_key>
+```
+
+Check that boto is able to verify credentials, by running in python (for example):
+```
+import boto
+s3 = boto.connect_s3()
+```
