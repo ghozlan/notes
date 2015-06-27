@@ -12,6 +12,17 @@ To check
 java -version
 ```
 
+## Summary
+* HDFS
+	* NameNode (default port: 50070/ port on EMR: 9101)
+	* DataNode
+* MapReduce
+	* JobTracker (default port: 50030/ port on EMR: 9100)
+	* TaskTracker
+
+http://blog.cloudera.com/blog/2009/08/hadoop-default-ports-quick-reference/
+http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/emr-web-interfaces.html
+
 # Python MapReduce (mrjob)
 
 https://pythonhosted.org/mrjob/guides/quickstart.html
