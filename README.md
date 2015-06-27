@@ -130,6 +130,7 @@ Cons:
 - [x] kaggle (signed-up 4.6.15)
 - [ ] boto
 - [ ] hive
+- [ ] pig
 
 # Kaggle
 
