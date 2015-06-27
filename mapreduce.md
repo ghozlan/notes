@@ -202,7 +202,7 @@ runners:
 
 * To configuring SSH credentials
 (to mrjob open an SSH tunnel to the master node to view live progress, see the job tracker in your browser, and so on),
-change permission of your key file `chmod 600 <key>.pem` and
+change permission of your key file `chmod 600 <key>.pem` (or equivalently `chmod og-rwx <key>.pem`) and
 add to the config file:
 ```
 runners:
@@ -211,6 +211,29 @@ runners:
 		ec2_key_pair_file: /path/to/<key_name>.pem # ~/ and $ENV_VARS allowed here
 		ssh_tunnel_to_job_tracker: true
 ``` 
+
+**IMPORTANT**: 
+
+1. The key must be in the **same region** (`us-east-1`,`us-west-2`,...) 
+as the elastic mapreduce cluster/jobflow.
+
+2. The EC2 key pair must be configured during cluster **launch** to enable SSH access.
+
+
+Notes:
+
+* A quick way to connect to the job tracker (from the same machine through which the job was launched) is using lynx
+```
+lynx localhost:<port>/jobtracker.jsp
+```
+
+* If your browser is running on a different machine from your job runner, add to the config file
+```
+runners:
+	emr:
+		ssh_tunnel_is_open : True
+```
+Now, any host can connect to the job tracker through the SSH tunnel you open.
 
 Example:
 run
