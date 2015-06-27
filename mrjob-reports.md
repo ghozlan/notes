@@ -1,3 +1,128 @@
+## Sample of output of running mrjob on EMR
+```
+ubuntu@ip-172-31-38-119:/pycon-mrjob$ python ~/mapreduce/mrjob2.py -r emr ~/mapreduce/kafka.txt
+using configs in /home/ubuntu/my.mrjob.conf
+using existing scratch bucket mrjob-0bd6285a5a56351d
+using s3://mrjob-0bd6285a5a56351d/tmp/ as our scratch dir on S3
+creating tmp directory /tmp/mrjob2.ubuntu.20150627.035937.461442
+writing master bootstrap script to /tmp/mrjob2.ubuntu.20150627.035937.461442/b.py
+Copying non-input files into s3://mrjob-0bd6285a5a56351d/tmp/mrjob2.ubuntu.20150627.035937.461442/files/
+Attempting to find an available job flow...
+Waiting 5.0s for S3 eventual consistency
+Creating Elastic MapReduce job flow
+Job flow created with ID: j-Q51DUIDBSM2P
+Created new job flow j-Q51DUIDBSM2P
+Job launched 30.3s ago, status STARTING: Provisioning Amazon EC2 capacity
+Job launched 60.8s ago, status STARTING: Provisioning Amazon EC2 capacity
+Job launched 91.2s ago, status STARTING: Provisioning Amazon EC2 capacity
+Job launched 121.7s ago, status STARTING: Provisioning Amazon EC2 capacity
+Job launched 152.1s ago, status STARTING: Provisioning Amazon EC2 capacity
+Job launched 182.5s ago, status STARTING: Configuring cluster software
+Job launched 213.0s ago, status STARTING: Configuring cluster software
+Job launched 243.4s ago, status BOOTSTRAPPING: Running bootstrap actions
+Job launched 273.8s ago, status BOOTSTRAPPING: Running bootstrap actions
+Job launched 304.2s ago, status BOOTSTRAPPING: Running bootstrap actions
+Job launched 334.6s ago, status BOOTSTRAPPING: Running bootstrap actions
+Job launched 365.1s ago, status RUNNING: Running step (mrjob2.ubuntu.20150627.035937.461442: Step 1 of 2)
+Opening ssh tunnel to Hadoop job tracker
+Connect to job tracker at: http://localhost:40703/jobtracker.jsp
+Job launched 396.5s ago, status RUNNING: Running step (mrjob2.ubuntu.20150627.035937.461442: Step 1 of 2)
+ map   0% reduce   0%
+Job launched 427.3s ago, status RUNNING: Running step (mrjob2.ubuntu.20150627.035937.461442: Step 1 of 2)
+ map  75% reduce   0%
+Job launched 457.9s ago, status RUNNING: Running step (mrjob2.ubuntu.20150627.035937.461442: Step 1 of 2)
+ map 100% reduce 100%
+Job launched 488.5s ago, status RUNNING: Running step (mrjob2.ubuntu.20150627.035937.461442: Step 2 of 2)
+ map 100% reduce 100%
+Job launched 519.2s ago, status RUNNING: Running step (mrjob2.ubuntu.20150627.035937.461442: Step 2 of 2)
+ map  25% reduce   0%
+Job launched 549.9s ago, status RUNNING: Running step (mrjob2.ubuntu.20150627.035937.461442: Step 2 of 2)
+ map 100% reduce   0%
+Job launched 580.5s ago, status RUNNING: Running step (mrjob2.ubuntu.20150627.035937.461442: Step 2 of 2)
+ map 100% reduce 100%
+Job completed.
+Running time was 234.0s (not counting time spent waiting for the EC2 instances)
+Fetching counters from SSH...
+Counters from step 1:
+  File Input Format Counters :
+    Bytes Read: 142251
+  File Output Format Counters :
+    Bytes Written: 54834
+  FileSystemCounters:
+    FILE_BYTES_READ: 30074 s :
+    Bytes Read: 142251
+  File Output Format Counters :
+    Bytes Written: 54834
+  FileSystemCounters:
+    FILE_BYTES_READ: 30074
+    FILE_BYTES_WRITTEN: 203397
+    HDFS_BYTES_READ: 548
+    HDFS_BYTES_WRITTEN: 54834
+.
+.
+.
+Counters from step 2:
+  File Input Format Counters :
+    Bytes Read: 137091
+  File Output Format Counters :
+    Bytes Written: 226
+  FileSystemCounters:
+    FILE_BYTES_READ: 23796
+    FILE_BYTES_WRITTEN: 180112
+    HDFS_BYTES_READ: 137687
+    S3_BYTES_WRITTEN: 226
+  Job Counters :
+    Data-local map tasks: 4
+    Launched map tasks: 4
+    Launched reduce tasks: 1
+    SLOTS_MILLIS_MAPS: 68370
+    SLOTS_MILLIS_REDUCES: 38637
+    Total time spent by all maps waiting after reserving slots (ms): 0
+    Total time spent by all reduces waiting after reserving slots (ms): 0
+  Map-Reduce Framework:
+    CPU time spent (ms): 5590
+    Combine input records: 0
+    Combine output records: 0
+    Map input bytes: 54834
+    Map input records: 2731
+    Map output bytes: 54834
+    Map output materialized bytes: 24387
+    Map output records: 2731
+    Physical memory (bytes) snapshot: 863469568
+    Reduce input groups: 1
+    Reduce input records: 2731
+    Reduce output records: 20
+    Reduce shuffle bytes: 24387
+    SPLIT_RAW_BYTES: 596
+    Spilled Records: 5462
+    Total committed heap usage (bytes): 606773248
+    Virtual memory (bytes) snapshot: 3281408000
+Streaming final output from s3://mrjob-0bd6285a5a56351d/tmp/mrjob2.ubuntu.20150627.035937.461442/output/
+245     "that"
+224     "gregor"
+214     "with"
+132     "which"
+131     "from"
+125     "this"
+124     "room"
+105     "they"
+101     "himself"
+100     "sister"
+100     "door"  
+97      "father"
+95      "would" 
+84      "mother"
+84      "have"
+81      "only"
+78      "then"
+72      "were"
+70      "their"
+69      "could"
+removing tmp directory /tmp/mrjob2.ubuntu.20150627.035937.461442
+Removing all files in s3://mrjob-0bd6285a5a56351d/tmp/mrjob2.ubuntu.20150627.035937.461442/
+Killing our SSH tunnel (pid 31027)
+```
+
 ## Samples of mrjob audit usage reports
 
 
