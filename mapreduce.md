@@ -202,6 +202,7 @@ runners:
 
 * To configuring SSH credentials
 (to mrjob open an SSH tunnel to the master node to view live progress, see the job tracker in your browser, and so on),
+change permission of your key file `chmod 600 <key>.pem` and
 add to the config file:
 ```
 runners:
@@ -226,7 +227,10 @@ runners:
 ``` 
 
 **NOT WORKING:** "Failed to open ssh tunnel to job tracker"
-* may need to change permission `chmod 600 <key>.pem`
+
+
+
+* For more configuration options, see https://pythonhosted.org/mrjob/guides/configs-reference.html
 
 ### Template
 ```
