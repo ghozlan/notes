@@ -125,7 +125,8 @@ Cons:
 - [x] bitbucket (created account on 29.5.15)
 - [x] mapreduce in python (mrjob) + AWS Elastic MapReduce (done 19.6.15 to 26.6.15)
 - [ ] spark (berkeley stack) in python
-- [ ] mysql/python
+- [x] mysql/python (done 7.6.15)
+- [x] python web framework [flask] (done 12.6.15 - 14.6.15)
 - [x] kaggle (signed-up 4.6.15)
 - [ ] boto
 - [ ] hive
