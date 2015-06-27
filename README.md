@@ -123,12 +123,11 @@ Cons:
    
 # More
 - [x] bitbucket (created account on 29.5.15)
-- [ ] mapreduce in python
+- [x] mapreduce in python (mrjob) + AWS Elastic MapReduce (done 19.6.15 to 26.6.15)
 - [ ] spark (berkeley stack) in python
 - [ ] mysql/python
 - [x] kaggle (signed-up 4.6.15)
 - [ ] boto
-- [ ] elastic mapreduce on aws
 - [ ] hive
 
 # Kaggle
