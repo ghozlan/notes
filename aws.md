@@ -17,7 +17,7 @@
 * 5 GB of Amazon S3 standard storage, 20,000 Get Requests, and 2,000 Put Requests
 
 ### Elastic MapReduce (EMR)
-* None
+* None. See [pricing](http://aws.amazon.com/elasticmapreduce/pricing/).
 
 ## Creating an EC2 Instance
 Compute> EC2>
