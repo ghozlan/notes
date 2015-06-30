@@ -69,8 +69,8 @@ cut -d: -f1 /etc/passwd
 ```
 
 ## Download Hadoop
-Go to http://hadoop.apache.org/releases.html
-Choose a binary of the latest stable release (here 2.7.0) and choose a mirror to download
+Go to http://hadoop.apache.org/releases.html,
+choose the binary of the latest stable release (here 2.7.0) and choose a mirror to download
 
 ```
 wget http://www.gtlib.gatech.edu/pub/apache/hadoop/common/hadoop-2.7.0/hadoop-2.7.0.tar.gz
