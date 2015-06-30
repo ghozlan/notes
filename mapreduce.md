@@ -2,6 +2,8 @@
 
 http://www.michael-noll.com/tutorials/running-hadoop-on-ubuntu-linux-single-node-cluster/
 
+http://www.bogotobogo.com/Hadoop/BigData_hadoop_Install_on_ubuntu_single_node_cluster.php
+
 ## Install Java (on Ubuntu)
 To install 
 ```
@@ -170,8 +172,13 @@ $HADOOP_PREFIX/sbin/stop-all.sh
 	* JobTracker (default port: 50030/ port on EMR: 9100)
 	* TaskTracker
 
+* ResourceManager [in recent hadoop/mapreduce versions]: default port 8088
+
 http://blog.cloudera.com/blog/2009/08/hadoop-default-ports-quick-reference/
 http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/emr-web-interfaces.html
+http://docs.hortonworks.com/HDP2Alpha/index.htm#Appendix/Ports_Appendix/YARN_Ports.htm
+
+Note (**Important**): do not forget to open the hadoop ports in the security group settings if using AWS EC2 instance.
 
 # Python MapReduce (mrjob)
 
