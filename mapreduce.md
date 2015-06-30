@@ -2,15 +2,134 @@
 
 http://www.michael-noll.com/tutorials/running-hadoop-on-ubuntu-linux-single-node-cluster/
 
-## Instal Java (on Ubuntu)
-To install
+## Install Java (on Ubuntu)
+To install 
 ```
+sudo apt-get update
 sudo apt-get install default-jdk
 ```
-To check
+or install (openjdk-7-jdk)
+
+
+To check which version of java you have
 ```
 java -version
 ```
+
+## SSH
+
+```
+sudo addgroup hdgroup
+sudo adduser --ingroup hdgroup hduser
+su - hduser
+ssh-keygen -P "" -f ~/.ssh/hadoop-key
+cat ~/.ssh/hadoop-key.pub >> ~/.ssh/authorized_keys
+```
+
+Note: To get a list of users, look at the first column of the output of
+```
+cat /etc/passwd
+```
+or just cut the first field given that the delimiter is a colon
+```
+cut -d: -f1 /etc/passwd
+```
+
+## Download Hadoop
+Go to http://hadoop.apache.org/releases.html
+Choose a binary of the latest stable release (here 2.7.0) and choose a mirror to download
+
+```
+wget http://www.gtlib.gatech.edu/pub/apache/hadoop/common/hadoop-2.7.0/hadoop-2.7.0.tar.gz
+tar -zxvf hadoop-2.7.0.tar.gz
+sudo mv hadoop-2.7.0 hadoop
+sudo chown -R hduser:hdgroup hadoop
+sudo mv hadoop /usr/local/hadoop
+```
+
+Appedend to `~/.bashrc`:
+```
+export JAVA_HOME=/usr/lib/jvm/default-java
+export HADOOP_PREFIX=/usr/local/hadoop
+export PATH=$PATH:$HADOOP_PREFIX/bin
+```
+and run
+```
+exec bash
+```
+
+## Configure
+
+sudo mkdir /usr/local/hadoop/tmp
+sudo chown ubuntu /usr/local/hadoop/tmp
+
+In `$HADOOP_PREFIX/etc/hadoop/`, make the following changes
+
+* hadoop-env.sh 
+
+```
+JAVA_HOME=/usr/lib/jvm/default-java
+export HADOOP_OPTS=-Djava.net.preferIPv4Stack=true
+```
+
+* core-site.xml
+
+```
+<property>
+  <name>hadoop.tmp.dir</name>
+  <value>/usr/local/hadoop/tmp</value>
+</property>
+
+<property>
+  <name>fs.default.name</name>
+  <value>hdfs://localhost:10001</value>
+  <description>The name of the default file system.</description>
+</property>
+```
+
+
+* mapred-site.xml
+
+
+```
+sudo cp mapred-site.xml.template mapred-site.xml
+```
+
+Then add to `mapred-site.xml`
+```
+<property>
+  <name>mapred.job.tracker</name>
+  <value>localhost:10002</value>
+  <description>The host and port that the MapReduce job tracker runs
+  at.  If "local", then jobs are run in-process as a single map
+  and reduce task.
+  </description>
+</property>
+```
+
+## Format
+
+```
+hadoop namenode -format
+```
+
+## Start, Check and Stop
+
+* Start all daemons
+```
+$HADOOP_PREFIX/sbin/start-all.sh
+```
+
+* List running daemons
+```
+jps
+```
+
+* Stop all daemons
+```
+$HADOOP_PREFIX/sbin/stop-all.sh
+```
+
 
 ## Summary
 * HDFS
