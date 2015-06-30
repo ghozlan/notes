@@ -18,6 +18,37 @@ java -version
 
 ## SSH
 
+Remember 
+```
+ssh -i <key>.pem user@hostname
+```
+You may add `-vvv` if ssh fails to get more debugging messages.
+
+### AWS EC2
+* Amazon already has the public key at `~/.ssh/id_rsa.pub`, but
+  we need to have the private key as well in order to SSH without a password.
+* Upload the `<key>.pem` file to the EC2 instance to `~/.ssh/id_rsa`
+	* Using FileZilla, for example.
+	* Using scp
+	```
+	scp -i <key>.pem <key>.pem user@hotname:/home/user/.ssh/id_rsa
+	```
+	* Using pscp (PuTTY scp)
+	```
+	pscp -i <key>.ppk <key>.pem user@hotname:/home/user/.ssh/id_rsa
+	```
+
+* Make sure the permissions are not too open:
+```
+chmod 600 ~/.ssh/id_rsa
+```
+
+Note: If you have the **ppk** file (putty format) file:
+load EC2 private key ppk file in PuTTYgen, use Conversions>Export OpenSSH key and save the key as .pem file.
+
+
+### Own cluster
+
 ```
 sudo addgroup hdgroup
 sudo adduser --ingroup hdgroup hduser
