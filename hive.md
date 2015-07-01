@@ -135,3 +135,17 @@ SELECT weekday, COUNT(*)
 FROM u_data_new
 GROUP BY weekday;
 ```
+
+* Join (equijoin)
+```
+SELECT
+u_data.rating, u_user.occupation, u_item.movie_title
+FROM
+u_data, u_user, u_item
+WHERE
+u_data.userid = u_user.userid
+AND
+u_data.movieid = u_item.movieid
+LIMIT 100
+;
+```
