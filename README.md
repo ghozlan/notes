@@ -1,14 +1,12 @@
 
-* aws.md
-* git-repo.md
-* mysql.md
-* webserver.md
-* hadoop.md
-* mapreduce.md
-* mrjob-reports.md
-* hive.md
-* python.md
-* more-notes.md
-* nitrous.md
-* to-do.md
-* useful-software.md
+* [Amazon Web Service](aws.md)
+* [Git](git-repo.md)
+* [MySQL](mysql.md)
+* [Web Server](webserver.md)
+* [Hadoop](hadoop.md)
+* [MapReduce](mapreduce.md)
+* [Hive](hive.md)
+* [Python](python.md)
+* [Nitrous](nitrous.md)
+* [To-do](to-do.md)
+
