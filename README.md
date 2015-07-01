@@ -1,5 +1,5 @@
 
-* [Amazon Web Service](aws.md)
+* [Amazon Web Services](aws.md)
 * [Git](git-repo.md)
 * [MySQL](mysql.md)
 * [Web Server](webserver.md)
