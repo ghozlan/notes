@@ -56,3 +56,15 @@ mv spark-1.4.0-bin-hadoop2.6.tgz spark
     cp $SPARK_PREFIX/conf/log4j.properties.template $SPARK_PREFIX/conf/log4j.properties
     ```
     Change `log4j.rootCategory=INFO, console` to `log4j.rootCategory=ERROR, console`
+
+## PySpark
+
+https://spark.apache.org/docs/0.9.0/python-programming-guide.html
+
+With the path to the bin directory of Spark added to PATH
+
+* Python: `pyspark`
+
+* IPython: `IPYTHON=1 pyspark`
+
+You get: SparkContext available as sc, HiveContext available as sqlContext.
