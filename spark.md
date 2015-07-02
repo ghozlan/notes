@@ -137,17 +137,19 @@ print(S[0:20])
 ### Sending programs/code within shell
 
 ```
-pyspark --py-files module.py another-module.py
+pyspark --py-files <module>.py,<another-module>.py <script-file>.py
 ```
 
 Example:
-write in `module.py` (filename does not have to be `module.py`)
+write in `module.py` (the file name does not have to be `module.py`)
 ```
 def mapper(line): return [(word,1) for word in line.split()]
 def reducer(x,y): return x+y
 ```
-then open pyspark python or ipython shell and run
+and write in `script.py` (again the file name does not have to be `script.py`)
 ```
+from pyspark import SparkContext
+sc = SparkContext()
 import module
 rdd = sc.textFile("kafka-short.txt")
 word_count_rdd = rdd.flatMap(module.mapper).reduceByKey(module.reducer)
@@ -155,3 +157,14 @@ word_count = word_count_rdd.collect()
 S = sorted(word_count,key=(lambda x: x[1]), reverse=True)
 print(S[0:20])
 ```
+then run
+```
+pyspark --py-files module.py script.py
+```
+
+Note: if you do not specify a script file, i.e., run
+```
+pyspark --py-files module.py
+```
+then the python pyspark shell with open and 
+you can `import module` within the shell.
