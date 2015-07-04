@@ -312,14 +312,19 @@ lsblk
 cat /etc/fstab
 ```
 
+Skip the first line of a file
+```
+tail <filename> -n+2
+```
 Get unique entries in a field (in csv, tsv,...etc) and their count
 ```
 cut <filename> -f<field-number> -d<delimiter> | sort | uniq -c | sort -r
 ```
-To skip the first line
+The previous two lines can be combined (piped)
 ```
-tail <filename> -n+2
+tail <filename> -n+2 | cut -f<field-number> -d<delimiter> | sort | uniq -c | sort -r
 ```
+
 
 ## Useful Linux Tools
 * diff
