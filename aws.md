@@ -303,11 +303,18 @@ Edit your /etc/fstab file and add the line:
 
 
 ## Useful Linux Commands
+
+Disk/storage
 ```
 df -h
 sudo fdisk -l | grep Disk
 lsblk
 cat /etc/fstab
+```
+
+Get unique entries in a field (in csv, tsv,...etc) and their count
+```
+cut <filename> -f<field-number> -d<delimiter> | sort | uniq -c | sort -r
 ```
 
 ## Useful Linux Tools
@@ -336,6 +343,7 @@ cat /etc/fstab
   
  [Ref](http://www.rationallyparanoid.com/articles/tcpdump.html)
 * nmap
+* lynx
 
 ## nano
 * For help/guide, press Ctrl+G
