@@ -316,6 +316,10 @@ Get unique entries in a field (in csv, tsv,...etc) and their count
 ```
 cut <filename> -f<field-number> -d<delimiter> | sort | uniq -c | sort -r
 ```
+To skip the first line
+```
+tail <filename> -n+2
+```
 
 ## Useful Linux Tools
 * diff
