@@ -11,3 +11,16 @@
 * Git + GitHub Desktop
 * SourceTree
 * Dropbox/Google Drive
+* 7-zip
+* CiscoAnyconnect
+* Spotify
+* GIMP + batch plugin
+* Connectify
+* cygwin
+* ghostscript
+* MikTeX 
+* TeXnicCenter
+* JabRef
+* VLC
+* WireShark
+* nmap
