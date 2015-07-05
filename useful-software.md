@@ -1,6 +1,6 @@
 * LibreOffice
 * TreeSize
-* WinMerge
+* WinMerge/ViceVersa
 * FileZilla
 * PuTTY
 * Notepad++
@@ -10,3 +10,4 @@
 * Eclipse
 * Git + GitHub Desktop
 * SourceTree
+* Dropbox/Google Drive
