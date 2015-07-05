@@ -20,4 +20,4 @@ For example, Time Series Data Analysis with pandas
       * http://pyvideo.org/video/1198/time-series-data-analysis-with-pandas
       * on youtube: https://www.youtube.com/watch?v=0unf-C-pBYE
 * files: 
-      * zip file: http://goo.gl/4f9j0
+      * zip file: http://goo.gl/4f9j0 and http://goo.gl/jy6vx
