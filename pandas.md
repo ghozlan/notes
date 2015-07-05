@@ -1,4 +1,6 @@
-#PANDAS
+#pandas
+
+panel data (Wes McKinny's [paper](http://www.dlr.de/sc/Portaldata/15/Resources/dokumente/pyhpc2011/submissions/pyhpc2011_submission_9.pdf)
 
 Tutorial: Wes McKinney
 * lecture: Data analysis in Python with pandas
