@@ -24,3 +24,5 @@
 * VLC
 * WireShark
 * nmap
+* Eclipse
+* Tor (Browser)
