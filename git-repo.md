@@ -64,5 +64,5 @@ Pros:
 * Offers private repos.
 
 Cons:
-* No markdown preview (really?)
+* No markdown preview. You can preview the README.md file though.
 * No check boxes in markdown (github has it, but I think it is not standard markdown)
