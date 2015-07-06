@@ -12,6 +12,10 @@ Tutorial: Wes McKinney
 * book: [Python for Data Analysis](http://www.amazon.com/gp/product/1449319793?colid=3J2ONC6G6CMKS&coliid=I12NRMOBQCOJSR&ref_=wl_it_dp_o_pC_nS_ttl)
 * code (for book): https://github.com/pydata/pydata-book
 
+Cheat sheets:
+* https://drive.google.com/folderview?id=0ByIrJAE4KMTtaGhRcXkxNHhmY2M
+* https://s3.amazonaws.com/quandl-static-content/Documents/Quandl+-+Pandas,+SciPy,+NumPy+Cheat+Sheet.pdf
+
 More tutorials at 
 http://pyvideo.org/search?models=videos.video&q=pandas+wes
 
