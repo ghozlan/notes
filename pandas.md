@@ -15,6 +15,7 @@ Tutorial: Wes McKinney
 Cheat sheets:
 * https://drive.google.com/folderview?id=0ByIrJAE4KMTtaGhRcXkxNHhmY2M
 * https://s3.amazonaws.com/quandl-static-content/Documents/Quandl+-+Pandas,+SciPy,+NumPy+Cheat+Sheet.pdf
+   * local copy [here](quandl-pandas-cheat.pdf) 
 
 More tutorials at 
 http://pyvideo.org/search?models=videos.video&q=pandas+wes
