@@ -139,6 +139,30 @@ ipython nbconvert --to python <notebook.ipynb>
 
 * Keyboard shortcurts: Ctrl+m h in ipython notebook
 
+* To access IPython Notebook remotely over an SSH tunnel
+
+Run on the remote machine (hosting the ipython notebook server):
+```
+ipython notebook --no-browser --port=7777
+```
+
+Run on the local machine:
+```
+export path=/C/Users/Hassan/Dropbox/aws
+export key=hello-key-pair.pem
+export remote_port=7777
+export local_port=6666
+export destination=52.26.159.191
+ssh -N -f -L localhost:$local_port:localhost:$remote_port -i $path/$key ubuntu@$destination
+```
+
+In browser on the local machine:
+```
+http://localhost:6666/
+```
+
+http://wisdomthroughknowledge.blogspot.com/2012/07/accessing-ipython-notebook-remotely.html
+
 ### Regular Expressions (RegEx)
 search
 
