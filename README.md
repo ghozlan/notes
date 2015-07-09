@@ -8,5 +8,8 @@
 * [Hive](hive.md)
 * [Python](python.md)
 * [Nitrous](nitrous.md)
+* [pandas](pandas.md)
+* [SQLite](sqlite.md)
+* [R](R.md)
 * [To-do](to-do.md)
 
