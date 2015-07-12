@@ -11,12 +11,19 @@
       `re.compile(pattern).search(string)` is functionally equivalent to `re.search(pattern, string)`
 - [ ] regex: re.compile().sub(,)
 - [ ] regex: re.compile().split()
-- [x] profiler ( 28.5.15)
-- [x] line profiler ( 28.5.15)
-- [x] memory profiler ( 28.5.15)
+- [x] profiler (28.5.15)
+- [x] line profiler (28.5.15)
+- [x] memory profiler (28.5.15)
 - [ ] structured arrays in numpy/scipy
 - [ ] create a new database using mysql connector on python
-- [ ] install pip locally (to a single use), which is useful when the user has no admin permissions.
+- [x] install pip locally (to a single use), which is useful when the user has no admin permissions (12.7.15)
+
+      ```
+      curl https://bootstrap.pypa.io/get-pip.py > get-pip.py 
+      python get-pip.py --user
+      export LOCAL_PYTHON=~/Library/Python/2.7 #on mac: use 'find ~ -name pip' to locate where pip is
+      export PATH=$PATH:$LOCAL_PYTHON/bin
+      ```
 
 # MATLAB
   - Dynamic field indexing in structures
