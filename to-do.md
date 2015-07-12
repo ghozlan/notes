@@ -51,6 +51,10 @@
       - Python packages numpy, scipy, matplotlib are already installed
       - File transfer: upload/download is possible through the web interface. No public/private keys are required which makes the process simple.
       - No GUI?
+
+# Cloud IPython Notebook
+- wakari.io
+- others?
    
 # More
 - [x] bitbucket (created account on 29.5.15)
