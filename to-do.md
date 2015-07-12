@@ -16,6 +16,7 @@
 - [x] memory profiler ( 28.5.15)
 - [ ] structured arrays in numpy/scipy
 - [ ] create a new database using mysql connector on python
+- [ ] install pip locally (to a single use), which is useful when the user has no admin permissions.
 
 # MATLAB
   - Dynamic field indexing in structures
