@@ -38,3 +38,26 @@ startup.m file and its proper placement and usage.
 ```
 
 http://cvxr.com/cvx/doc/install.html
+
+#CVXPY
+
+http://stanford.edu/~boyd/software.html
+
+http://www.cvxpy.org/en/latest/
+
+Ubuntu
+
+```
+sudo apt-get update
+sudo apt-get install -y libatlas-base-dev gfortran #Install ATLAS and gfortran (needed for SCS).
+sudo apt-get install -y python-dev
+sudo apt-get install -y python-pip
+sudo apt-get install -y python-numpy python-scipy
+#sudo pip install cvxpy  #install for all users
+pip install --user cvxpy #install locally
+sudo apt-get install python-nose
+nosetests cvxpy #Test the installation with nose
+```
+
+
+#CVXOPT?
