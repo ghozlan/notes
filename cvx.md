@@ -1,7 +1,9 @@
 
 #CVX
 
-Download and install CVX on mac machine (on-campus computer center machines)
+## Download and install 
+
+Mac (on-campus computer center machines)
 
 Run in shell
 ```
@@ -39,14 +41,31 @@ startup.m file and its proper placement and usage.
 
 http://cvxr.com/cvx/doc/install.html
 
+## Use
+
+Example
+```
+m = 20; n = 10; p = 4;
+A = randn(m,n); b = randn(m,1);
+C = randn(p,n); d = randn(p,1); e = rand;
+cvx_begin
+    variable x(n)
+    minimize( norm( A * x - b, 2 ) )
+    subject to
+        C * x == d
+        norm( x, Inf ) <= e
+cvx_end
+```
+
+http://cvxr.com/cvx/
+
 #CVXPY
 
-http://stanford.edu/~boyd/software.html
-
-http://www.cvxpy.org/en/latest/
+## Download and install
 
 Ubuntu
 
+Run in shell
 ```
 sudo apt-get update
 sudo apt-get install -y libatlas-base-dev gfortran #Install ATLAS and gfortran (needed for SCS).
@@ -59,5 +78,38 @@ sudo apt-get install python-nose
 nosetests cvxpy #Test the installation with nose
 ```
 
+## Use
+
+Example
+
+```
+from cvxpy import *
+import numpy
+
+# Problem data.
+m = 30
+n = 20
+numpy.random.seed(1)
+A = numpy.random.randn(m, n)
+b = numpy.random.randn(m)
+
+# Construct the problem.
+x = Variable(n)
+objective = Minimize(sum_squares(A*x - b))
+constraints = [0 <= x, x <= 1]
+prob = Problem(objective, constraints)
+
+# The optimal objective is returned by prob.solve().
+result = prob.solve()
+# The optimal value for x is stored in x.value.
+print x.value
+# The optimal Lagrange multiplier for a constraint
+# is stored in constraint.dual_value.
+print constraints[0].dual_value
+```
+
+http://www.cvxpy.org/en/latest/
+
+http://stanford.edu/~boyd/software.html
 
 #CVXOPT?
