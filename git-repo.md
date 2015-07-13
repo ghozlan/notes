@@ -1,3 +1,8 @@
+# Git Cheat Sheets
+
+* http://www.git-tower.com/blog/git-cheat-sheet/
+* https://training.github.com/kit/downloads/github-git-cheat-sheet.pdf
+
 # GitHub
 - [ ] rename repo (and its effect on local copy): https://help.github.com/articles/renaming-a-repository/
 - [x] how to create a to-do list: https://help.github.com/articles/writing-on-github/#task-lists
