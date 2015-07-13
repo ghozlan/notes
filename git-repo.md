@@ -54,7 +54,17 @@
       ```
       git branch --all --verbose
       ```
+- [x] list current config (user.name, user.email, ...etc)
+      ```
+      git config --list
+      ```
       
+      to set user.name and user.email
+      ```
+      git config --global user.name "ghozlan"
+      git config --global user.email "hassan.ghozlan@gmail.com"
+      ```
+
 # Bit Bucket
 - [ ] links in bitbucket (markdown?)
 - [x] import a git repo from github into bitbucket: possible through Repositories> Import repository
