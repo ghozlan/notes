@@ -49,6 +49,11 @@
       4b8b164 SU-MIMO 2x2
       8a37f64 Initial commit
       ```
+- [x] list all branches
+
+      ```
+      git branch --all --verbose
+      ```
       
 # Bit Bucket
 - [ ] links in bitbucket (markdown?)
