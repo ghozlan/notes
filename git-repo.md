@@ -3,6 +3,17 @@
 * http://www.git-tower.com/blog/git-cheat-sheet/
 * https://training.github.com/kit/downloads/github-git-cheat-sheet.pdf
 
+# Git
+
+* Check if remote is ahead
+```
+git remote -v update
+git status -uno
+#git show-branch *master #show commits in all branches whose names end in master
+git pull
+```
+(http://stackoverflow.com/questions/3258243/git-check-if-pull-needed)
+
 # GitHub
 - [ ] rename repo (and its effect on local copy): https://help.github.com/articles/renaming-a-repository/
 - [x] how to create a to-do list: https://help.github.com/articles/writing-on-github/#task-lists
