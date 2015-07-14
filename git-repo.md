@@ -77,6 +77,22 @@ git pull
       ```
 
 # Bit Bucket
+- [x] make a link to the latest file (without specifying the commit)
+      
+      Instead of this
+      ```
+      https://bitbucket.org/ghozlan/wltv-output/raw/ea8c5c6debc72450a61b5193d595ad1054583ebf/html/multilayer_script.html
+      ```
+      use
+      ```
+      https://bitbucket.org/ghozlan/wltv-output/raw/master/html/multilayer_script.html
+      ```
+      
+      This is useful, for example, when wanting to use htmlpreview
+      ```
+      https://htmlpreview.github.io/?=url-to-html
+      ```
+ 
 - [ ] links in bitbucket (markdown?)
 - [x] import a git repo from github into bitbucket: possible through Repositories> Import repository
 - [x] upload a git repo from local machine into bitbucket
