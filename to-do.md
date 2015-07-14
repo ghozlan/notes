@@ -80,3 +80,6 @@
 # LAMP
 - [ ] unpack mysql query results in php
 - [ ] call python script on the submittion of an HTML form (is it `onSubmit` or `action` or something else?)
+
+# OS
+- [ ] how to make copied directories retain their original dates?
