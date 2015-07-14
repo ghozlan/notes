@@ -11,11 +11,15 @@ export CVX_DL=http://web.cvxr.com/cvx/cvx-maci64.zip # download link
 cd ~
 curl $CVX_DL > cvx-package.zip
 unzip cvx-package.zip
+```
 
+Open matlab (in shell):
+```
 export MATLAB_PREFIX=/Applications//MATLAB_R2014a.app
 export PATH=$PATH:$MATLAB_PREFIX/bin
 matlab --no-desktop
 ```
+or open matlab with GUI.
 
 Then run in matlab shell
 ```
