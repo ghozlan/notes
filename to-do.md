@@ -82,4 +82,10 @@
 - [ ] call python script on the submittion of an HTML form (is it `onSubmit` or `action` or something else?)
 
 # OS
-- [ ] how to make copied directories retain their original dates?
+- [x] how to make copied directories retain their original dates?
+      
+      ```
+      # cp with -p (--preserve) to preserve attributes, such as timestamps, 
+      # and -R (--recursive) to copy all contents recursively.
+      cp -pR <path-to-dir> <path-to-new-location>
+      ```
