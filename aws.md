@@ -35,6 +35,7 @@ Compute> EC2> Instances> Instances
 * Use PuTTY
   * Connect to: ubunu@(Public DNS) or ubuntu@(Public IP)
   * Note: To paste (from clipboard), just right-click in the window area.
+* Or use ssh: `ssh -i <key>.pem ubuntu@host` (remember to set the permissions of the key: `chmod 600 <key>.pem`)
 * Use *screen* command (neat tool for handling screens/windows in command line)
   * Ctrl+a ?: help
   * Ctrl+a c: create new screen
@@ -48,7 +49,8 @@ Compute> EC2> Instances> Instances
     * Ctrl+a X (Shift+x): remove/kill the current region (the region in focus)
   * screen -r: resume session
 
-## Transferring files using FileZilla
+## Transferring files 
+### FileZilla
 * Edit> Settings> Connection> SFTP> 
   * Add keyfile
 * File> Site Manager> New Site
@@ -59,6 +61,12 @@ Compute> EC2> Instances> Instances
   * User: ubuntu
   * Password: leave blank (we are using a key instead)
   * Connect
+
+### secure copy: scp
+```
+scp -i <key>.pem <filename> user@hotname:/home/user/
+```
+Remember to set the permissions of the key `chmod 600 <key>.pem`
 
 ## Adding Elastic Block Store (EBS) Volume
 Compute> EC2> Elastic Block Store> Volume
