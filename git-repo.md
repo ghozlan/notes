@@ -14,6 +14,13 @@ git pull
 ```
 (http://stackoverflow.com/questions/3258243/git-check-if-pull-needed)
 
+* Stage a file for deletion
+```
+git rm <filename>
+git rm --cached <filename> #delete from repo but keep file in filesystem
+```
+(http://stackoverflow.com/questions/12373733/staging-deleted-files)
+
 # GitHub
 - [ ] rename repo (and its effect on local copy): https://help.github.com/articles/renaming-a-repository/
 - [x] how to create a to-do list: https://help.github.com/articles/writing-on-github/#task-lists
