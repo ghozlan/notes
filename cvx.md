@@ -13,6 +13,8 @@ curl $CVX_DL > cvx-package.zip
 unzip cvx-package.zip
 ```
 
+Note: for windows: `export CVX_DL=http://web.cvxr.com/cvx/cvx-w64.zip`
+
 Open matlab (in shell):
 ```
 export MATLAB_PREFIX=/Applications//MATLAB_R2014a.app
