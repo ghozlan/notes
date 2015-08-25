@@ -21,6 +21,16 @@ git rm --cached <filename> #delete from repo but keep file in filesystem
 ```
 (http://stackoverflow.com/questions/12373733/staging-deleted-files)
 
+* delete/remove/undo most recent commit(s)
+
+```
+git reset --hard <commit-id>
+#If you already pushed it, you will need to do a force push to get rid of it
+git push origin HEAD --force
+```
+(http://stackoverflow.com/questions/1338728/delete-commits-from-a-branch-in-git)
+
+
 # GitHub
 - [ ] rename repo (and its effect on local copy): https://help.github.com/articles/renaming-a-repository/
 - [x] how to create a to-do list: https://help.github.com/articles/writing-on-github/#task-lists
