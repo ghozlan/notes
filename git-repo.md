@@ -14,6 +14,19 @@ git pull
 ```
 (http://stackoverflow.com/questions/3258243/git-check-if-pull-needed)
 
+It may be useful to try: `git remote show origin`. It does not do fetch (so nothing changes). Sample output
+
+```
+remote origin
+Fetch URL: https://bitbucket.org/ghozlan/<repo>.git
+Push  URL: https://bitbucket.org/ghozlan/<repo>.git
+HEAD branch: master
+Remote branch:
+  master tracked
+Local ref configured for 'git push':
+  master pushes to master (local out of date)
+ ```
+
 * Stage a file for deletion
 ```
 git rm <filename>
