@@ -14,7 +14,28 @@ git pull
 ```
 (http://stackoverflow.com/questions/3258243/git-check-if-pull-needed)
 
-It may be useful to try: `git remote show origin`. It does not do fetch (so nothing changes). Sample output
+
+Note: if local branch is not set to track the remote branch, git status will not show how many commits local branch is ahead/behind.
+For example, output will look similar to
+```
+$ git status
+On branch master
+nothing to commit, working directory clean
+```
+but if tracking is set, then 
+```
+$ git status
+On branch master
+Your branch is behind 'origin/master' by 2 commits, and can be fast-forwarded.
+  (use "git pull" to update your local branch)
+
+nothing to commit, working directory clean
+```
+
+To set current branch to track a remote branch: `git branch -u <remote>/<branch>`, e.g., `git branch -u origin/master` will make local master branch track remote master branch (assuming the command is issued when on local master branch).
+
+
+Note: it may be useful to try: `git remote show origin`. It does not do fetch (so nothing changes). Sample output
 
 ```
 remote origin
