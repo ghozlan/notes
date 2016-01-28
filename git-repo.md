@@ -43,6 +43,8 @@ git pull origin master
 ```
 (http://stackoverflow.com/questions/600079/is-there-any-way-to-clone-a-git-repositorys-sub-directory-only/600189#600189)
 
+*it seems that the method above fetches the whole repo, but only checks out part of it, which means that the ".git" directory could be large!!*
+
 # GitHub
 - [ ] rename repo (and its effect on local copy): https://help.github.com/articles/renaming-a-repository/
 - [x] how to create a to-do list: https://help.github.com/articles/writing-on-github/#task-lists
