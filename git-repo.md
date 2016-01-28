@@ -106,6 +106,8 @@ git pull origin master
       git config --global user.name "ghozlan"
       git config --global user.email "hassan.ghozlan@gmail.com"
       ```
+      
+      to set empty email: may use "<>"
 
 # Bit Bucket
 - [x] make a link to the latest file (without specifying the commit)
