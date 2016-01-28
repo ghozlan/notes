@@ -30,6 +30,18 @@ git push origin HEAD --force
 ```
 (http://stackoverflow.com/questions/1338728/delete-commits-from-a-branch-in-git)
 
+* clone a specific files and/or subdirectories of repo (called sparse checkout). this is useful if, for example, there is a directory for source code, a directory for builds/executables and a directory for help/documentation. One might want to check out only the source code (to avoid download/upload of big files).
+
+```
+git init
+git remote add origin <url>
+#tell git that a part of the repo will be checked out 
+git config core.sparseCheckout true
+#define which files/folders to check out
+echo "some/dir/" >> .git/info/sparse-checkout
+git pull origin master
+```
+(http://stackoverflow.com/questions/600079/is-there-any-way-to-clone-a-git-repositorys-sub-directory-only/600189#600189)
 
 # GitHub
 - [ ] rename repo (and its effect on local copy): https://help.github.com/articles/renaming-a-repository/
